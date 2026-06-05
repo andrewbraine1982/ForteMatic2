@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: white;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #111;
+}
