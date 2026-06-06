@@ -4,13 +4,11 @@
   box-sizing: border-box;
 }
 
-html,
 body {
-  overflow-x: hidden;
-  background: white;
-  font-family: Arial, sans-serif;
+  background: #fff;
 }
 
-body {
-  color: #111;
+.heroBanner img {
+  width: 100%;
+  display: block;
 }
