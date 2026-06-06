@@ -21,7 +21,7 @@ export default function Home() {
         </div>
 
         <div className="heroImage">
-          <img src="/images/hero-products.webp" alt="ForteMatic supplement product range" />
+          <img src="/hero-products.webp" alt="ForteMatic supplement product range" />
         </div>
       </section>
     </main>
