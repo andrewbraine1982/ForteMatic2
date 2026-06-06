@@ -12,3 +12,70 @@ body {
   width: 100%;
   display: block;
 }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 90vh;
+  padding: 60px 6%;
+  gap: 40px;
+}
+
+.heroText h1 {
+  font-size: 72px;
+  line-height: 0.95;
+  font-weight: 800;
+}
+
+.heroText p {
+  font-size: 28px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.heroImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 30px;
+  background: #0b8f3b;
+  color: white;
+  padding: 18px 34px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+section:not(.hero) {
+  max-width: 1300px;
+  margin: auto;
+  padding: 100px 6%;
+}
+
+section:not(.hero) h2 {
+  font-size: 54px;
+  margin-bottom: 30px;
+}
+
+.stars {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroText h1 {
+    font-size: 52px;
+  }
+
+  .heroText p {
+    font-size: 22px;
+  }
+}
