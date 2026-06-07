@@ -15,6 +15,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: inherit;
+}
+
 .topBar {
   height: 44px;
   background: #000;
@@ -39,12 +43,14 @@ body {
   background: #fff;
 }
 
-.logo {
+.logo,
+.footerLogo {
   font-size: 64px;
   font-weight: 900;
   letter-spacing: -0.08em;
   color: #000;
   line-height: 1;
+  text-decoration: none;
 }
 
 .registeredMark {
@@ -55,12 +61,12 @@ body {
 
 .nav {
   display: flex;
-  gap: 42px;
+  gap: 34px;
 }
 
 .nav a {
   color: #111;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   text-decoration: none;
 }
@@ -154,20 +160,43 @@ body {
   text-decoration: none;
 }
 
-.primaryBtn {
-  background: #0b9c43;
-  color: #fff;
-}
-
-.primaryBtn strong {
-  margin-left: 6px;
-  font-size: 24px;
-  letter-spacing: -0.04em;
-}
-
+.primaryBtn,
 .secondaryBtn {
   background: #0b9c43;
   color: #fff;
+}
+
+.amazonLogoText {
+  position: relative;
+  display: inline-block;
+  padding: 0 2px 11px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.amazonSmile {
+  position: absolute;
+  left: 8px;
+  bottom: 1px;
+  width: 62px;
+  height: 16px;
+  border-bottom: 4px solid #ff9900;
+  border-radius: 0 0 80px 80px;
+  transform: rotate(-5deg);
+}
+
+.amazonSmile::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 8px;
+  height: 8px;
+  border-top: 4px solid #ff9900;
+  border-right: 4px solid #ff9900;
+  transform: rotate(35deg);
 }
 
 .trustRow {
@@ -175,6 +204,7 @@ body {
   grid-template-columns: repeat(4, max-content);
   gap: 20px;
   align-items: center;
+  list-style: none;
 }
 
 .trustItem {
@@ -253,21 +283,88 @@ body {
   margin-bottom: 14px;
 }
 
-.contentSection h2 {
-  font-size: 52px;
+.contentSection h2,
+.newsletter h2 {
+  font-size: clamp(38px, 4vw, 58px);
   line-height: 1.05;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
+  letter-spacing: -0.05em;
+  max-width: 900px;
 }
 
-.contentSection p {
+.contentSection > p {
   font-size: 22px;
   line-height: 1.6;
   color: #444;
   max-width: 760px;
 }
 
+.cardGrid,
+.productGrid,
+.reviewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 34px;
+}
+
+.cardGrid article,
+.productGrid article,
+.reviewGrid article {
+  border: 1px solid #e6e6e6;
+  border-radius: 22px;
+  padding: 28px;
+  background: #fff;
+}
+
+.cardGrid h3,
+.productGrid h3 {
+  font-size: 25px;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.cardGrid p,
+.productGrid p,
+.reviewGrid p {
+  font-size: 18px;
+  line-height: 1.55;
+  color: #444;
+}
+
+.reviewGrid strong {
+  display: block;
+  margin-top: 18px;
+  color: #0b9c43;
+  font-size: 15px;
+}
+
+.checkList {
+  list-style: none;
+  display: grid;
+  gap: 18px;
+  max-width: 850px;
+  margin-top: 24px;
+}
+
+.checkList li {
+  font-size: 22px;
+  line-height: 1.45;
+  font-weight: 800;
+  padding-left: 40px;
+  position: relative;
+}
+
+.checkList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0b9c43;
+}
+
 details {
-  max-width: 800px;
+  max-width: 900px;
   border: 1px solid #e7e7e7;
   border-radius: 16px;
   padding: 20px 24px;
@@ -283,6 +380,87 @@ summary {
 
 details p {
   margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #444;
+}
+
+.newsletter {
+  margin: 70px 4%;
+  padding: 70px 8%;
+  border-radius: 32px;
+  background: #111;
+  color: #fff;
+}
+
+.newsletter .sectionLabel {
+  color: #8ee6a9;
+}
+
+.newsletter form {
+  max-width: 650px;
+}
+
+.newsletter label {
+  display: block;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.emailRow {
+  display: flex;
+  gap: 12px;
+}
+
+.emailRow input {
+  flex: 1;
+  min-height: 60px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 18px;
+  font-size: 18px;
+}
+
+.emailRow button {
+  min-height: 60px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 28px;
+  background: #0b9c43;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  padding: 60px 5%;
+  border-top: 1px solid #e8e8e8;
+}
+
+.footerLogo {
+  font-size: 44px;
+  margin-bottom: 14px;
+}
+
+.footer p {
+  max-width: 620px;
+  color: #444;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.footerLinks {
+  display: grid;
+  gap: 12px;
+}
+
+.footerLinks a {
+  font-weight: 800;
+  text-decoration: none;
 }
 
 @media (max-width: 1100px) {
@@ -300,6 +478,10 @@ details p {
     padding: 24px 5%;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .logo {
+    font-size: 52px;
   }
 
   .nav {
@@ -331,33 +513,39 @@ details p {
     flex-wrap: wrap;
     justify-content: center;
   }
-}
-.amazonLogoText {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-  font-weight: 900;
+
+  .cardGrid,
+  .productGrid,
+  .reviewGrid,
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .emailRow {
+    flex-direction: column;
+  }
 }
 
-.amazonSmile {
-  position: absolute;
-  left: 8px;
-  bottom: -3px;
-  width: 64px;
-  height: 18px;
-  border-bottom: 4px solid #ff9900;
-  border-radius: 0 0 70px 70px;
-  transform: rotate(-8deg);
-}
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 56px;
+  }
 
-.amazonSmile::after {
-  content: "";
-  position: absolute;
-  right: -2px;
-  bottom: -4px;
-  width: 9px;
-  height: 9px;
-  border-top: 4px solid #ff9900;
-  border-right: 4px solid #ff9900;
-  transform: rotate(38deg);
+  .hero p {
+    font-size: 19px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+
+  .trustRow {
+    grid-template-columns: 1fr;
+  }
+
+  .contentSection,
+  .newsletter {
+    padding: 56px 6%;
+  }
 }
