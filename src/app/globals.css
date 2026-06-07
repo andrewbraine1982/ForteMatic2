@@ -501,9 +501,11 @@ details p {
   }
 
   .heroImage {
-    width: 100%;
-    transform: none;
-  }
+  width: min(1500px, 96vw);
+  max-width: none;
+  height: auto;
+  transform: translateX(0%) translateY(-2%);
+}
 
   .trustRow {
     grid-template-columns: repeat(2, max-content);
