@@ -387,3 +387,188 @@ footer p {
     flex-direction: column;
   }
 }
+.hero {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+.promoBar {
+  background: #050505;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  gap: 18px;
+  padding: 13px 6%;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.heroNav {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.heroNav strong {
+  font-size: 42px;
+  letter-spacing: -0.04em;
+}
+
+.heroNav div {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.heroNav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.heroNav .navShop {
+  background: #068f3f;
+  color: white;
+  padding: 16px 28px;
+  border-radius: 999px;
+}
+
+.heroInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 6% 50px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 36px;
+}
+
+.heroContent {
+  max-width: 620px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.rating span {
+  color: #068f3f;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.rating strong {
+  font-size: 18px;
+}
+
+.hero h1 {
+  font-size: 70px;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  margin-bottom: 28px;
+}
+
+.heroText {
+  font-size: 22px;
+  line-height: 1.55;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.amazonCta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 42px;
+  flex-wrap: wrap;
+}
+
+.amazonCta span {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.amazonCta strong {
+  font-size: 42px;
+  letter-spacing: -0.05em;
+}
+
+.trustIcons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.trustIcons div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trustIcons span {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #eef8ef;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+.trustIcons p {
+  font-weight: 700;
+  color: #222;
+  line-height: 1.2;
+}
+
+.heroVisual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .promoBar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroNav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .heroNav div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    padding-top: 36px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .heroText {
+    font-size: 18px;
+  }
+
+  .trustIcons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
