@@ -233,14 +233,7 @@ footer h2 {
   }
 }
 
-.seenIn {
-  max-width: 100%;
-  overflow: hidden;
-  padding: 22px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  background: #fff;
-}
+
 
 .ticker {
   display: flex;
