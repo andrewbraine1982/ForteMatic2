@@ -5,16 +5,12 @@ export default function Home() {
   return (
     <main>
 
-      {/* TOP BAR */}
-
       <div className="topBar">
         <span>🏷️ SUBSCRIBE & SAVE 15%</span>
         <span>🚚 FREE DELIVERY OVER €50</span>
         <span>🌿 SCIENCE-BACKED. PLANT-POWERED.</span>
         <span>🛡️ 30-DAY MONEY BACK GUARANTEE</span>
       </div>
-
-      {/* NAV */}
 
       <header className="header">
 
@@ -23,17 +19,15 @@ export default function Home() {
         </div>
 
         <nav className="nav">
-
           <a href="#products">Shop all</a>
           <a href="#science">Science</a>
           <a href="#goals">Health Goals</a>
           <a href="#faq">FAQ</a>
-
         </nav>
 
         <a
-          href={amazonStoreUrl}
           className="navButton"
+          href={amazonStoreUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -42,11 +36,9 @@ export default function Home() {
 
       </header>
 
-      {/* HERO */}
-
       <section className="hero">
 
-        <div className="heroContent">
+        <div className="heroLeft">
 
           <div className="stars">
 
@@ -86,14 +78,14 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Shop the ForteMatic Range
+              Shop the range
             </a>
 
             <a
-              href="#products"
+              href="#science"
               className="secondaryBtn"
             >
-              Explore Ingredients
+              Explore ingredients
             </a>
 
           </div>
@@ -112,15 +104,11 @@ export default function Home() {
               🛡 Trusted by Thousands
             </div>
 
-            <div className="trustItem">
-              🇺🇸 Made in USA
-            </div>
-
           </div>
 
         </div>
 
-        <div className="heroImageWrap">
+        <div className="heroRight">
 
           <img
             src="/hero-clean.png"
@@ -132,8 +120,6 @@ export default function Home() {
 
       </section>
 
-      {/* AS SEEN IN */}
-
       <section className="seenIn">
 
         <span>Forbes</span>
@@ -144,18 +130,31 @@ export default function Home() {
 
       </section>
 
-      {/* PLACEHOLDER REST OF SITE */}
+      <section id="products" className="contentSection">
 
-      <section
-        id="products"
-        style={{
-          padding: "120px 8%"
-        }}
-      >
+        <h2>Targeted support for your health goals</h2>
 
-        <h2>
-          Products Section
-        </h2>
+        <p>
+          Science-backed supplements for metabolism,
+          gut health, energy, longevity and hormone support.
+        </p>
+
+      </section>
+
+      <section id="science" className="contentSection">
+
+        <h2>Built around evidence</h2>
+
+        <p>
+          Ingredients selected for function,
+          quality and real-world usability.
+        </p>
+
+      </section>
+
+      <section id="faq" className="contentSection">
+
+        <h2>Frequently asked questions</h2>
 
       </section>
 
