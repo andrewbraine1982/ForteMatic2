@@ -254,31 +254,8 @@ footer h2 {
 .heroImage {
   position: relative;
 }
-
-.heroClick {
-  position: absolute;
-  display: block;
-  z-index: 5;
-}
-
-.heroClickPrimary {
-  left: 3%;
-  bottom: 32%;
-  width: 21%;
-  height: 7%;
-}
 .heroImage {
   position: relative;
 }
 
-ground: rgba(255, 0, 0, 0.35);
-}
-
-
-.heroClickPrimary {
-  left: 3%;
-  bottom: 16%;
-  width: 22%;
-  height: 8%;
-}
 
