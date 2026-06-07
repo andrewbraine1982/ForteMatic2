@@ -169,34 +169,33 @@ a {
 .amazonLogoText {
   position: relative;
   display: inline-block;
-  padding: 0 2px 11px;
-  font-size: 25px;
+  padding-bottom: 10px;
+  font-size: 24px;
   font-weight: 900;
-  letter-spacing: -0.06em;
   line-height: 1;
 }
 
 .amazonSmile {
   position: absolute;
-  left: 8px;
-  bottom: 1px;
-  width: 62px;
-  height: 16px;
-  border-bottom: 4px solid #ff9900;
-  border-radius: 0 0 80px 80px;
-  transform: rotate(-5deg);
+  left: 7px;
+  bottom: -1px;
+  width: 58px;
+  height: 14px;
+  border-bottom: 3px solid #ff9900;
+  border-radius: 0 0 100px 100px;
+  transform: rotate(-6deg);
 }
 
 .amazonSmile::after {
   content: "";
   position: absolute;
-  right: -3px;
-  bottom: -3px;
-  width: 8px;
-  height: 8px;
-  border-top: 4px solid #ff9900;
-  border-right: 4px solid #ff9900;
-  transform: rotate(35deg);
+  right: -2px;
+  bottom: -2px;
+  width: 6px;
+  height: 6px;
+  border-top: 3px solid #ff9900;
+  border-right: 3px solid #ff9900;
+  transform: rotate(38deg);
 }
 
 .trustRow {
