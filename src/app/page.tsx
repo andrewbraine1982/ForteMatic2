@@ -4,42 +4,74 @@ const amazonStoreUrl =
 export default function Home() {
   return (
     <main>
-   <section className="hero" aria-labelledby="hero-title">
-  <div className="heroContent">
-    <p className="eyebrowHero">
-      Science-backed supplements
-    </p>
+<section className="hero" aria-labelledby="hero-title">
+  <div className="promoBar">
+    <span>🏷️ Subscribe & Save 15%</span>
+    <span>🚚 Free Delivery Over $50</span>
+    <span>🌿 Science-Backed. Plant-Powered.</span>
+    <span>🛡️ 30-Day Money Back Guarantee</span>
+  </div>
 
-    <h1 id="hero-title">
-      Support metabolism, gut health, energy, and longevity.
-    </h1>
-
-    <p className="heroText">
-      Premium daily supplements designed to support GLP-1 pathways,
-      metabolism, digestion, energy, hormone balance, and long-term wellness.
-    </p>
-
-    <div className="heroButtons">
+  <nav className="heroNav" aria-label="Main navigation">
+    <strong>ForteMatic</strong>
+    <div>
+      <a href="#products">Shop all</a>
+      <a href="#goals">Health Goals</a>
+      <a href="#faq">FAQ</a>
       <a
-        className="primaryButton"
+        className="navShop"
         href={amazonStoreUrl}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Shop ForteMatic on Amazon
-      </a>
-
-      <a className="secondaryButton" href="#products">
-        Explore Products
+        Shop Now
       </a>
     </div>
-  </div>
+  </nav>
 
-  <div className="heroVisual">
-    <img
-      src="/hero-clean.png"
-      alt="ForteMatic supplements including GLP-1, Fiber, NAD+, DIM, Akkermansia and Spermidine"
-    />
+  <div className="heroInner">
+    <div className="heroContent">
+      <div className="rating">
+        <span>★★★★★</span>
+        <strong>60,000+ happy customers</strong>
+      </div>
+
+      <h1 id="hero-title">
+        Elevate your everyday health with GLP-1, metabolism, energy, and gut support.
+      </h1>
+
+      <p className="heroText">
+        Premium supplements designed to support GLP-1 function, metabolism,
+        energy, digestion, and long-term wellbeing.
+      </p>
+
+      <div className="amazonCta">
+        <a
+          className="primaryButton"
+          href={amazonStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Shop the ForteMatic Range
+        </a>
+        <span>on</span>
+        <strong>amazon</strong>
+      </div>
+
+      <div className="trustIcons" aria-label="ForteMatic product benefits">
+        <div><span>🌱</span><p>Premium<br />Ingredients</p></div>
+        <div><span>⚗️</span><p>Science<br />Backed</p></div>
+        <div><span>🛡️</span><p>Trusted by<br />Thousands</p></div>
+        <div><span>🇺🇸</span><p>Made in<br />the USA</p></div>
+      </div>
+    </div>
+
+    <div className="heroVisual">
+      <img
+        src="/hero-clean.png"
+        alt="ForteMatic supplements including GLP-1, Fiber, NAD+, DIM, Akkermansia and Spermidine"
+      />
+    </div>
   </div>
 </section>
 
