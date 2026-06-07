@@ -4,26 +4,44 @@ const amazonStoreUrl =
 export default function Home() {
   return (
     <main>
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="heroSeoText">
-          <h1 id="hero-title">
-            ForteMatic Supplements for GLP-1 Support, Gut Health, Metabolism,
-            Energy, and Longevity
-          </h1>
-          <p>
-            Science-backed, plant-powered supplements designed to support GLP-1
-            function, metabolism, digestion, cellular energy, hormone support,
-            and long-term wellbeing.
-          </p>
-        </div>
+   <section className="hero" aria-labelledby="hero-title">
+  <div className="heroContent">
+    <p className="eyebrowHero">
+      Science-backed supplements
+    </p>
 
-        <div className="heroImage">
-          <img
-            src="/hero-products.webp"
-            alt="ForteMatic supplement bottles including GLP-1, Fiber, NAD+, DIM, Akkermansia, and Spermidine"
-          />
-        </div>
-      </section>
+    <h1 id="hero-title">
+      Support metabolism, gut health, energy, and longevity.
+    </h1>
+
+    <p className="heroText">
+      Premium daily supplements designed to support GLP-1 pathways,
+      metabolism, digestion, energy, hormone balance, and long-term wellness.
+    </p>
+
+    <div className="heroButtons">
+      <a
+        className="primaryButton"
+        href={amazonStoreUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Shop ForteMatic on Amazon
+      </a>
+
+      <a className="secondaryButton" href="#products">
+        Explore Products
+      </a>
+    </div>
+  </div>
+
+  <div className="heroVisual">
+    <img
+      src="/hero-clean.png"
+      alt="ForteMatic supplements including GLP-1, Fiber, NAD+, DIM, Akkermansia and Spermidine"
+    />
+  </div>
+</section>
 
       <section className="heroCtaBar" aria-label="Shop ForteMatic supplements">
         <a className="primaryButton" href={amazonStoreUrl} target="_blank" rel="noopener noreferrer">
