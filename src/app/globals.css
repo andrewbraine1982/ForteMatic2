@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #fff;
   font-family: Arial, sans-serif;
@@ -14,78 +18,109 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  position: relative;
 }
 
 .heroImage img {
   width: 100%;
   height: auto;
   display: block;
-  position: relative;
-  z-index: 1;
 }
 
-section:not(.hero) {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 6%;
-  font-family: Arial, sans-serif;
-}
-
-section:not(.hero) h2 {
-  font-size: 54px;
-  line-height: 1.1;
-  font-weight: 800;
-  color: #111;
-  margin-bottom: 20px;
-}
-.ticker {
-  max-width: 100%;
+.heroSeoText {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
+  clip: rect(0,0,0,0);
   white-space: nowrap;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  padding: 22px 0;
-  font-weight: 700;
 }
 
-.ticker span {
-  margin-left: 6%;
-  margin-right: 40px;
+.heroCtaBar {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 0 6% 30px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.ticker div {
-  display: inline-block;
-  animation: scroll 18s linear infinite;
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
 }
 
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-40%); }
+.primaryButton {
+  background: #068f3f;
+  color: white;
 }
 
-.support,
-.glp,
-.reviews,
-.faq,
-.newsletter {
+.secondaryButton {
+  background: #f2f7f3;
+  color: #111;
+  border: 1px solid #dbe8de;
+}
+
+section:not(.hero):not(.heroCtaBar) {
   max-width: 1200px;
   margin: 0 auto;
   padding: 70px 6%;
 }
 
-.support h2,
-.glp h2,
-.reviews h2,
-.faq h2,
-.newsletter h2 {
-  font-size: 44px;
-  line-height: 1.1;
+.asSeen {
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.asSeen h2 {
+  font-size: 16px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.logoTicker {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logoTrack {
+  display: inline-flex;
+  gap: 60px;
+  font-size: 28px;
+  font-weight: 800;
+  animation: tickerMove 24s linear infinite;
+}
+
+@keyframes tickerMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 1.05;
   margin-bottom: 18px;
 }
 
+.eyebrowText {
+  color: #068f3f;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 12px;
+}
+
 .support > p,
-.glp p,
+.products > p,
 .newsletter p {
   font-size: 20px;
   line-height: 1.6;
@@ -94,6 +129,7 @@ section:not(.hero) h2 {
 }
 
 .cards,
+.productGrid,
 .reviewGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,12 +137,28 @@ section:not(.hero) h2 {
 }
 
 .card,
+.productCard,
 .review {
   border: 1px solid #eee;
-  border-radius: 22px;
+  border-radius: 24px;
   padding: 28px;
   background: #fff;
   box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.card h3,
+.productCard h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p,
+.productCard p,
+.review p,
+.trust li,
+.faq p {
+  color: #444;
+  line-height: 1.6;
 }
 
 .icon {
@@ -114,69 +166,58 @@ section:not(.hero) h2 {
   height: 44px;
   border-radius: 50%;
   background: #e9f7ee;
-  color: #0b8f3b;
+  color: #068f3f;
   display: grid;
   place-items: center;
   margin-bottom: 15px;
   font-weight: 800;
 }
 
-.glp {
-  display: grid;
-  grid-template-columns: 1fr;
+.products,
+.trust {
   background: #f7fbf8;
-  border-radius: 28px;
+  border-radius: 32px;
 }
 
-.eyebrow {
-  display: inline-block;
-  background: #f05a24;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 800;
-  margin-bottom: 14px;
+.productButton {
+  margin-top: 30px;
 }
 
-.glp ul {
+.trust ul {
   list-style: none;
-  margin-bottom: 30px;
+  display: grid;
+  gap: 14px;
+  font-size: 20px;
 }
 
-.glp li {
-  margin-bottom: 12px;
-  font-size: 18px;
-}
-
-.glp li::before {
+.trust li::before {
   content: "✓";
-  color: #0b8f3b;
+  color: #068f3f;
   font-weight: 800;
   margin-right: 10px;
 }
 
 .faq details {
   border: 1px solid #e7e7e7;
-  border-radius: 14px;
-  padding: 18px 22px;
-  margin-bottom: 12px;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
 }
 
 .faq summary {
   font-weight: 800;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .faq p {
   margin-top: 12px;
-  color: #444;
-  line-height: 1.6;
 }
 
 .newsletter {
-  background: linear-gradient(135deg, #0b8f3b, #642cff);
+  background: linear-gradient(135deg, #068f3f, #642cff);
   color: white;
-  border-radius: 28px;
+  border-radius: 32px;
   margin-bottom: 50px;
 }
 
@@ -187,23 +228,25 @@ section:not(.hero) h2 {
 .newsletter form {
   display: flex;
   gap: 12px;
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .newsletter input {
   flex: 1;
-  padding: 16px;
+  padding: 16px 18px;
   border-radius: 999px;
   border: none;
+  font-size: 16px;
 }
 
 .newsletter button {
-  padding: 16px 26px;
+  padding: 16px 28px;
   border-radius: 999px;
   border: none;
   background: #111;
   color: white;
   font-weight: 800;
+  cursor: pointer;
 }
 
 footer {
@@ -217,45 +260,35 @@ footer h2 {
   margin-bottom: 12px;
 }
 
+footer p {
+  color: #ddd;
+  margin-bottom: 8px;
+}
+
 @media (max-width: 800px) {
+  h2 {
+    font-size: 34px;
+  }
+
   .cards,
+  .productGrid,
   .reviewGrid {
     grid-template-columns: 1fr;
   }
 
-  .support h2,
-  .glp h2,
-  .reviews h2,
-  .faq h2,
-  .newsletter h2 {
-    font-size: 34px;
+  .logoTrack {
+    font-size: 22px;
+    gap: 36px;
   }
 
   .newsletter form {
     flex-direction: column;
   }
-}
-.heroSeoText {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-}
-.heroSeoText {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-}
-.heroImage {
-  position: relative;
-}
-.heroImage {
-  position: relative;
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
 }
 
 
