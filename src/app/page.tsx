@@ -4,7 +4,6 @@ export default function Home() {
 
   return (
     <main>
-
       <div className="topBar">
         <span>🏷️ SUBSCRIBE & SAVE 15%</span>
         <span>🚚 FREE DELIVERY OVER €50</span>
@@ -13,12 +12,9 @@ export default function Home() {
       </div>
 
       <header className="header">
+        <div className="logo">ForteMatic</div>
 
-        <div className="logo">
-          ForteMatic
-        </div>
-
-        <nav className="nav">
+        <nav className="nav" aria-label="Main navigation">
           <a href="#products">Shop all</a>
           <a href="#science">Science</a>
           <a href="#goals">Health Goals</a>
@@ -33,131 +29,125 @@ export default function Home() {
         >
           Shop Now
         </a>
-
       </header>
 
-      <section className="hero">
-
+      <section className="hero" aria-labelledby="hero-title">
         <div className="heroLeft">
-
-          <div className="stars">
-
-            <span className="greenStars">
-              ★★★★★
-            </span>
-
-            <span>
-              60,000+ happy customers
-            </span>
-
+          <div className="stars" aria-label="Rated five stars by customers">
+            <span className="greenStars">★★★★★</span>
+            <span>60,000+ happy customers</span>
           </div>
 
-          <h1>
-
+          <h1 id="hero-title">
             Elevate your everyday{" "}
-
-            <span className="italicWord">
-              health.
-            </span>
-
+            <span className="italicWord">health.</span>
           </h1>
 
           <p>
-
-            Premium supplements designed to support
-            GLP-1 function, metabolism, energy,
-            digestion and long-term wellbeing.
-
+            Premium supplements designed to support GLP-1 function, metabolism,
+            energy, digestion and long-term wellbeing.
           </p>
 
           <div className="heroButtons">
-
             <a
               href={amazonStoreUrl}
               className="primaryBtn"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Shop the range
+              Shop on <span className="amazonWord">amazon</span>
             </a>
 
-            <a
-              href="#science"
-              className="secondaryBtn"
-            >
-              Explore ingredients
+            <a href="#products" className="secondaryBtn">
+              Explore Products
             </a>
-
           </div>
 
-          <div className="trustRow">
-
+          <div className="trustRow" aria-label="ForteMatic trust badges">
             <div className="trustItem">
-              🌱 Premium Ingredients
+              <span>🌱</span>
+              <p>Premium Ingredients</p>
             </div>
 
             <div className="trustItem">
-              🧪 Science Backed
+              <span>🧪</span>
+              <p>Science Backed</p>
             </div>
 
             <div className="trustItem">
-              🛡 Trusted by Thousands
+              <span>🇺🇸</span>
+              <p>Made in USA</p>
             </div>
 
+            <div className="trustItem">
+              <span>✅</span>
+              <p>GMP Certified</p>
+            </div>
           </div>
-
         </div>
 
         <div className="heroRight">
-
           <img
             src="/hero-clean.png"
-            alt="ForteMatic supplements"
+            alt="ForteMatic GLP-1, Fiber, NAD+, DIM, Akkermansia and Spermidine supplement bottles"
             className="heroImage"
           />
-
         </div>
-
       </section>
 
-      <section className="seenIn">
-
-        <span>Forbes</span>
-        <span>Men’s Health</span>
-        <span>Women’s Health</span>
-        <span>Healthline</span>
-        <span>mindbodygreen</span>
-
+      <section className="seenIn" aria-label="As seen in">
+        <span>AS SEEN IN</span>
+        <strong>Forbes</strong>
+        <strong>Men’s Health</strong>
+        <strong>Women’s Health</strong>
+        <strong>Healthline</strong>
+        <strong>mindbodygreen</strong>
       </section>
 
       <section id="products" className="contentSection">
-
-        <h2>Targeted support for your health goals</h2>
-
+        <p className="sectionLabel">Product Family</p>
+        <h2>Explore the ForteMatic range.</h2>
         <p>
-          Science-backed supplements for metabolism,
-          gut health, energy, longevity and hormone support.
+          Targeted daily supplements for GLP-1 support, gut health, metabolism,
+          energy, hormone balance and longevity.
         </p>
+      </section>
 
+      <section id="goals" className="contentSection softSection">
+        <p className="sectionLabel">Health Goals</p>
+        <h2>Support the way you want to feel every day.</h2>
+        <p>
+          Choose formulas designed around appetite support, digestion, energy,
+          metabolic health and long-term wellbeing.
+        </p>
       </section>
 
       <section id="science" className="contentSection">
-
-        <h2>Built around evidence</h2>
-
+        <p className="sectionLabel">Science</p>
+        <h2>Built around functional ingredients.</h2>
         <p>
-          Ingredients selected for function,
-          quality and real-world usability.
+          ForteMatic formulas are designed for practical daily routines using
+          supplement ingredients selected for wellness support.
         </p>
-
       </section>
 
-      <section id="faq" className="contentSection">
+      <section id="faq" className="contentSection softSection">
+        <p className="sectionLabel">FAQ</p>
+        <h2>Frequently asked questions.</h2>
 
-        <h2>Frequently asked questions</h2>
+        <details>
+          <summary>Where can I buy ForteMatic?</summary>
+          <p>You can shop the ForteMatic range through our Amazon store.</p>
+        </details>
 
+        <details>
+          <summary>What does ForteMatic GLP-1 support?</summary>
+          <p>
+            ForteMatic GLP-1 is designed to support appetite, fullness, gut
+            health and metabolic wellness.
+          </p>
+        </details>
       </section>
-
     </main>
   );
 }
