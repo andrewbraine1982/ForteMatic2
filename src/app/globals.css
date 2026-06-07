@@ -21,6 +21,8 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  position: relative;
+  z-index: 1;
 }
 
 section:not(.hero) {
@@ -272,7 +274,9 @@ footer h2 {
 .heroClick {
   position: absolute;
   display: block;
-  z-index: 5;
+  z-index: 10;
+  cursor: pointer;
+}
 }
 
 .heroClickPrimary {
