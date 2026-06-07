@@ -240,10 +240,10 @@ a {
 }
 
 .heroImage {
-  width: min(1500px, 92vw);
+  width: min(1500px, 96vw);
   max-width: none;
   height: auto;
-  transform: translateX(7%) translateY(-2%);
+  transform: translateX(0%) translateY(-2%);
 }
 
 .seenIn {
