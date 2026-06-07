@@ -1,131 +1,161 @@
-const amazonStoreUrl =
-  "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
-
 export default function Home() {
+  const amazonStoreUrl =
+    "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
+
   return (
     <main>
 
-      <section className="hero">
+      {/* TOP BAR */}
 
-        <div className="promoBar">
-          <span>🏷 Subscribe & Save 15%</span>
-          <span>🚚 Free Delivery Over €50</span>
-          <span>🌿 Science-Backed. Plant-Powered.</span>
-          <span>🛡 30-Day Money Back Guarantee</span>
+      <div className="topBar">
+        <span>🏷️ SUBSCRIBE & SAVE 15%</span>
+        <span>🚚 FREE DELIVERY OVER €50</span>
+        <span>🌿 SCIENCE-BACKED. PLANT-POWERED.</span>
+        <span>🛡️ 30-DAY MONEY BACK GUARANTEE</span>
+      </div>
+
+      {/* NAV */}
+
+      <header className="header">
+
+        <div className="logo">
+          ForteMatic
         </div>
 
-        <nav className="heroNav">
+        <nav className="nav">
 
-          <strong>ForteMatic</strong>
-
-          <div>
-            <a href="#products">Shop all</a>
-            <a href="#science">Science</a>
-            <a href="#goals">Health Goals</a>
-            <a href="#faq">FAQ</a>
-
-            <a
-              className="navShop"
-              href={amazonStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Shop Now
-            </a>
-          </div>
+          <a href="#products">Shop all</a>
+          <a href="#science">Science</a>
+          <a href="#goals">Health Goals</a>
+          <a href="#faq">FAQ</a>
 
         </nav>
 
-        <div className="heroInner">
+        <a
+          href={amazonStoreUrl}
+          className="navButton"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Shop Now
+        </a>
 
-          <div className="heroContent">
+      </header>
 
-            <div className="rating">
-              <span>★★★★★</span>
-              <strong>60,000+ happy customers</strong>
-            </div>
+      {/* HERO */}
 
-            <h1>
-              Elevate your
-              <br />
-              everyday <em>health.</em>
-            </h1>
+      <section className="hero">
 
-            <p className="heroText">
-              Premium supplements designed to support GLP-1 function,
-              metabolism, energy, digestion and long-term wellbeing.
-            </p>
+        <div className="heroContent">
 
-            <div className="amazonCta">
+          <div className="stars">
 
-              <a
-                className="primaryButton"
-                href={amazonStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Shop the ForteMatic Range
-              </a>
+            <span className="greenStars">
+              ★★★★★
+            </span>
 
-              <div className="amazonText">
-                <span>on</span>
-                <strong>amazon</strong>
-              </div>
-
-            </div>
-
-            <div className="trustIcons">
-
-              <div>
-                <span>🌱</span>
-                <p>
-                  Premium
-                  <br />
-                  Ingredients
-                </p>
-              </div>
-
-              <div>
-                <span>🧪</span>
-                <p>
-                  Science
-                  <br />
-                  Backed
-                </p>
-              </div>
-
-              <div>
-                <span>🛡</span>
-                <p>
-                  Trusted by
-                  <br />
-                  Thousands
-                </p>
-              </div>
-
-              <div>
-                <span>🇺🇸</span>
-                <p>
-                  Made in
-                  <br />
-                  USA
-                </p>
-              </div>
-
-            </div>
+            <span>
+              60,000+ happy customers
+            </span>
 
           </div>
 
-          <div className="heroVisual">
+          <h1>
 
-            <img
-              src="/hero-clean.png"
-              alt="ForteMatic supplements supporting metabolism, gut health, GLP-1 pathways and longevity"
-            />
+            Elevate your everyday{" "}
+
+            <span className="italicWord">
+              health.
+            </span>
+
+          </h1>
+
+          <p>
+
+            Premium supplements designed to support
+            GLP-1 function, metabolism, energy,
+            digestion and long-term wellbeing.
+
+          </p>
+
+          <div className="heroButtons">
+
+            <a
+              href={amazonStoreUrl}
+              className="primaryBtn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop the ForteMatic Range
+            </a>
+
+            <a
+              href="#products"
+              className="secondaryBtn"
+            >
+              Explore Ingredients
+            </a>
+
+          </div>
+
+          <div className="trustRow">
+
+            <div className="trustItem">
+              🌱 Premium Ingredients
+            </div>
+
+            <div className="trustItem">
+              🧪 Science Backed
+            </div>
+
+            <div className="trustItem">
+              🛡 Trusted by Thousands
+            </div>
+
+            <div className="trustItem">
+              🇺🇸 Made in USA
+            </div>
 
           </div>
 
         </div>
+
+        <div className="heroImageWrap">
+
+          <img
+            src="/hero-clean.png"
+            alt="ForteMatic supplements"
+            className="heroImage"
+          />
+
+        </div>
+
+      </section>
+
+      {/* AS SEEN IN */}
+
+      <section className="seenIn">
+
+        <span>Forbes</span>
+        <span>Men’s Health</span>
+        <span>Women’s Health</span>
+        <span>Healthline</span>
+        <span>mindbodygreen</span>
+
+      </section>
+
+      {/* PLACEHOLDER REST OF SITE */}
+
+      <section
+        id="products"
+        style={{
+          padding: "120px 8%"
+        }}
+      >
+
+        <h2>
+          Products Section
+        </h2>
 
       </section>
 
