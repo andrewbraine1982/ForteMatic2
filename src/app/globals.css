@@ -290,5 +290,36 @@ footer p {
     width: 100%;
   }
 }
+.heroCtaBar {
+  max-width: 1200px !important;
+  margin: 24px auto 0 !important;
+  padding: 0 6% 34px !important;
+  display: flex !important;
+  gap: 14px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
 
+.heroCtaBar a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 54px !important;
+  padding: 16px 30px !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+}
+
+.heroCtaBar .primaryButton {
+  background: #068f3f !important;
+  color: #ffffff !important;
+}
+
+.heroCtaBar .secondaryButton {
+  background: #f2f7f3 !important;
+  color: #111111 !important;
+  border: 1px solid #dbe8de !important;
+}
 
