@@ -271,12 +271,7 @@ footer h2 {
   position: relative;
 }
 
-.heroClick {
-  position: absolute;
-  display: block;
-  z-index: 10;
-  cursor: pointer;
-  background: rgba(255, 0, 0, 0.35);
+ground: rgba(255, 0, 0, 0.35);
 }
 
 
