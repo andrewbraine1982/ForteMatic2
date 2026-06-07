@@ -18,7 +18,7 @@ export default function Home() {
             src="/hero-products.webp"
             alt="ForteMatic supplement bottles"
           />
-          <a
+          
 <a
   className="heroClick heroClickPrimary"
   href="https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto"
