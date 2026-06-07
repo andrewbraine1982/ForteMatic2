@@ -43,9 +43,19 @@ export default function Home() {
           </p>
 
           <div className="heroButtons">
-            <a className="primaryBtn" href={amazonStoreUrl} target="_blank" rel="noopener noreferrer">
-              Shop on <strong>amazon</strong>
-            </a>
+           <a
+  className="primaryBtn"
+  href={amazonStoreUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Shop on
+
+  <span className="amazonLogoText">
+    amazon
+    <span className="amazonSmile"></span>
+  </span>
+</a>
 
             <a className="secondaryBtn" href="#products">
               Explore Products
