@@ -21,12 +21,7 @@ export default function Home() {
         </div>
       </section>
       
-  <section className="ticker">
-  <span>AS SEEN IN</span>
-  <div>
-    Forbes · Men’s Health · Women’s Health · Healthline · MindBodyGreen · Forbes · Men’s Health · Women’s Health · Healthline
-  </div>
-</section>
+ 
 
 <section className="support">
   <h2>Targeted support for your health goals.</h2>
