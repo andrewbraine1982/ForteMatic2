@@ -18,7 +18,13 @@ export default function Home() {
             src="/hero-products.webp"
             alt="ForteMatic supplement bottles"
           />
+          <a
+  className="heroClick heroClickPrimary"
+  href="#products"
+  aria-label="Shop ForteMatic supplements"
+/>
         </div>
+          
       </section>
       
  
