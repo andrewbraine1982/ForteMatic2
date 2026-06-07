@@ -85,9 +85,9 @@ a {
   position: relative;
   min-height: calc(100vh - 162px);
   display: grid;
-  grid-template-columns: 39% 61%;
+  grid-template-columns: 38% 62%;
   align-items: center;
-  padding: 34px 4% 24px;
+  padding: 34px 0 24px 4%;
   overflow: hidden;
 }
 
@@ -233,17 +233,18 @@ a {
 .heroRight {
   position: relative;
   height: 100%;
-  min-height: 620px;
+  min-height: 680px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: -4vw;
 }
 
 .heroImage {
-  width: min(1320px, 82vw);
+  width: min(1500px, 92vw);
   max-width: none;
   height: auto;
-  transform: translateX(2%) translateY(-2%);
+  transform: translateX(7%) translateY(-2%);
 }
 
 .seenIn {
