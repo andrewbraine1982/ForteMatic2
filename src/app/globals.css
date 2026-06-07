@@ -322,4 +322,68 @@ footer p {
   color: #111111 !important;
   border: 1px solid #dbe8de !important;
 }
+.hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 6% 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 40px;
+}
 
+.heroContent {
+  max-width: 560px;
+}
+
+.eyebrowHero {
+  color: #068f3f;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.heroText {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.heroVisual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .heroText {
+    font-size: 18px;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+}
