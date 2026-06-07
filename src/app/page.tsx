@@ -19,9 +19,12 @@ export default function Home() {
             alt="ForteMatic supplement bottles"
           />
           <a
+<a
   className="heroClick heroClickPrimary"
-  href="#products"
-  aria-label="Shop ForteMatic supplements"
+  href="https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Shop ForteMatic supplements on Amazon"
 />
         </div>
           
