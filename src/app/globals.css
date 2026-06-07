@@ -235,23 +235,3 @@ footer h2 {
 
 
 
-.ticker {
-  display: flex;
-  gap: 48px;
-  white-space: nowrap;
-  font-weight: 800;
-  animation: tickerMove 22s linear infinite;
-}
-
-.ticker span {
-  font-size: 18px;
-}
-
-@keyframes tickerMove {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
