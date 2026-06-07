@@ -232,3 +232,33 @@ footer h2 {
     flex-direction: column;
   }
 }
+
+.seenIn {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 22px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.ticker {
+  display: flex;
+  gap: 48px;
+  white-space: nowrap;
+  font-weight: 800;
+  animation: tickerMove 22s linear infinite;
+}
+
+.ticker span {
+  font-size: 18px;
+}
+
+@keyframes tickerMove {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
