@@ -249,5 +249,20 @@ footer h2 {
   clip: rect(0,0,0,0);
   white-space: nowrap;
 }
+.heroImage {
+  position: relative;
+}
 
+.heroClick {
+  position: absolute;
+  display: block;
+  z-index: 5;
+}
+
+.heroClickPrimary {
+  left: 3%;
+  bottom: 16%;
+  width: 22%;
+  height: 8%;
+}
 
