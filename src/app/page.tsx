@@ -123,16 +123,7 @@ export default function Home() {
   <p>Science-backed, plant-powered supplements for everyday health.</p>
   <p>© 2025 ForteMatic. All rights reserved.</p>
 </footer>
-<section className="seenIn">
-  <div className="ticker">
-    <span>AS SEEN IN</span>
-    <span>Forbes</span>
-    <span>Men's Health</span>
-    <span>Women's Health</span>
-    <span>Healthline</span>
-    <span>mindbodygreen</span>
-  </div>
-</section>
+
     </main>
   );
 }
