@@ -7,21 +7,25 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #fff;
   color: #111;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* HERO */
 
 .hero {
   width: 100%;
-  background: white;
+  background: #fff;
 }
 
 .promoBar {
@@ -30,24 +34,24 @@ img {
   color: white;
   display: flex;
   justify-content: center;
-  gap: 48px;
+  gap: 34px;
   padding: 14px 5%;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 
 .heroNav {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 26px 6%;
+  padding: 28px 5%;
   border-bottom: 1px solid #ececec;
 }
 
 .heroNav strong {
-  font-size: 58px;
+  font-size: 56px;
   font-weight: 800;
   letter-spacing: -0.05em;
 }
@@ -55,95 +59,94 @@ img {
 .heroNav div {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 34px;
 }
 
 .heroNav a {
   color: #111;
-  text-decoration: none;
   font-weight: 700;
 }
 
 .navShop {
-  background: #0a963f;
+  background: #0b9c43;
   color: white !important;
   padding: 18px 34px;
   border-radius: 999px;
 }
 
 .heroInner {
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.95fr 1.05fr;
   align-items: center;
-  padding: 70px 6%;
-  gap: 50px;
+  padding: 60px 5% 40px;
+  gap: 10px;
 }
 
 .heroContent {
-  max-width: 620px;
+  max-width: 640px;
 }
 
 .rating {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: 32px;
+  margin-bottom: 26px;
 }
 
 .rating span {
-  color: #0a963f;
-  font-size: 42px;
+  color: #0b9c43;
+  font-size: 36px;
+  line-height: 1;
 }
 
 .rating strong {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .hero h1 {
-  font-size: 86px;
-  line-height: 0.95;
+  font-size: 72px;
+  line-height: 0.94;
   letter-spacing: -0.06em;
   margin: 0 0 28px;
 }
 
 .heroText {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.6;
   color: #444;
-  margin-bottom: 42px;
+  margin-bottom: 34px;
 }
 
 .amazonCta {
   display: flex;
   align-items: center;
-  gap: 22px;
-  margin-bottom: 48px;
+  gap: 20px;
   flex-wrap: wrap;
+  margin-bottom: 42px;
 }
 
 .primaryButton {
-  background: #0a963f;
+  background: #0b9c43;
   color: white;
   padding: 20px 34px;
   border-radius: 14px;
-  text-decoration: none;
   font-weight: 700;
 }
 
 .amazonCta span {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
 }
 
 .amazonCta strong {
-  font-size: 60px;
+  font-size: 52px;
   font-weight: 800;
+  letter-spacing: -0.05em;
 }
 
 .trustIcons {
   display: flex;
-  gap: 26px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
@@ -172,76 +175,88 @@ img {
 
 .heroVisual {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .heroVisual img {
-  width: 100%;
-  max-width: 760px;
+  width: 120%;
+  max-width: none;
+  transform: translateX(2%);
 }
 
 /* AS SEEN */
 
 .asSeen {
-  padding: 30px 6% 50px;
+  padding: 20px 5% 50px;
 }
 
 .logoTicker {
   border: 1px solid #ececec;
-  border-radius: 20px;
+  border-radius: 18px;
   padding: 28px;
 }
 
 .logoTrack {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
-  font-size: 18px;
+  gap: 24px;
+  flex-wrap: wrap;
   font-weight: 700;
 }
 
 /* MOBILE */
 
 @media (max-width: 1100px) {
-  .heroInner {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 58px;
-  }
 
   .heroNav {
     flex-direction: column;
-    gap: 24px;
-  }
-
-  .promoBar {
-    flex-wrap: wrap;
     gap: 20px;
-    text-align: center;
   }
 
-  .logoTrack {
-    flex-wrap: wrap;
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .heroVisual {
     justify-content: center;
+  }
+
+  .heroVisual img {
+    width: 100%;
+    transform: none;
+  }
+
+  .hero h1 {
+    font-size: 54px;
   }
 }
 
 @media (max-width: 768px) {
+
+  .heroNav strong {
+    font-size: 42px;
+  }
+
+  .heroNav div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .hero h1 {
-    font-size: 44px;
+    font-size: 42px;
   }
 
   .heroText {
     font-size: 18px;
   }
 
-  .heroNav strong {
-    font-size: 42px;
+  .amazonCta strong {
+    font-size: 40px;
   }
 
-  .amazonCta strong {
-    font-size: 42px;
+  .trustIcons {
+    gap: 18px;
   }
 }
