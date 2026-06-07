@@ -1,7 +1,16 @@
 export default function Home() {
   return (
     <main>
-      <section className="hero">
+<section className="hero" aria-labelledby="hero-title">
+  <div className="heroSeoText">
+  <h1 id="hero-title">
+    ForteMatic Supplements for GLP-1 Support, Gut Health, Metabolism, Energy, and Longevity
+  </h1>
+
+  <p>
+    Science-backed, plant-powered daily supplements designed to support appetite control, digestion, metabolism, cellular energy, and everyday wellness.
+  </p>
+</div>
       
 
         <div className="heroImage">
