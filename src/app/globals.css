@@ -202,10 +202,10 @@ body {
 }
 
 .heroImage {
-  width: min(1120px, 72vw);
+  width: min(1320px, 82vw);
   max-width: none;
   height: auto;
-  transform: translateX(4%) translateY(0);
+  transform: translateX(2%) translateY(-2%);
 }
 
 .seenIn {
