@@ -40,9 +40,17 @@ body {
 }
 
 .logo {
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 900;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.08em;
+  color: #000;
+  line-height: 1;
+}
+
+.registeredMark {
+  font-size: 0.28em;
+  vertical-align: top;
+  margin-left: 2px;
 }
 
 .nav {
@@ -333,22 +341,23 @@ details p {
 
 .amazonSmile {
   position: absolute;
-  left: 4px;
-  bottom: -2px;
-  width: 58px;
-  height: 14px;
-  border-bottom: 3px solid #ff9900;
-  border-radius: 50px;
+  left: 8px;
+  bottom: -3px;
+  width: 64px;
+  height: 18px;
+  border-bottom: 4px solid #ff9900;
+  border-radius: 0 0 70px 70px;
+  transform: rotate(-8deg);
 }
 
 .amazonSmile::after {
   content: "";
   position: absolute;
-  right: -1px;
-  bottom: -3px;
-  width: 8px;
-  height: 8px;
-  border-right: 3px solid #ff9900;
-  border-top: 3px solid #ff9900;
-  transform: rotate(35deg);
+  right: -2px;
+  bottom: -4px;
+  width: 9px;
+  height: 9px;
+  border-top: 4px solid #ff9900;
+  border-right: 4px solid #ff9900;
+  transform: rotate(38deg);
 }
