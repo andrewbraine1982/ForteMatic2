@@ -12,14 +12,15 @@ export default function Home() {
       </div>
 
       <header className="header">
-      <div className="logo">
-  ForteMatic<span className="registeredMark">®</span>
-</div>
+        <a className="logo" href="/" aria-label="ForteMatic home">
+          ForteMatic<span className="registeredMark">®</span>
+        </a>
 
         <nav className="nav" aria-label="Main navigation">
-          <a href="#products">Shop all</a>
-          <a href="#science">Science</a>
           <a href="#goals">Health Goals</a>
+          <a href="#products">Products</a>
+          <a href="#trust">Why ForteMatic</a>
+          <a href="#reviews">Reviews</a>
           <a href="#faq">FAQ</a>
         </nav>
 
@@ -40,36 +41,30 @@ export default function Home() {
           </h1>
 
           <p>
-            Premium supplements designed to support GLP-1 function, metabolism,
-            energy, digestion and long-term wellbeing.
+            Premium daily supplements designed to support GLP-1 support, gut health,
+            metabolism, energy, hormone support and long-term wellbeing.
           </p>
 
           <div className="heroButtons">
-           <a
-  className="primaryBtn"
-  href={amazonStoreUrl}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Shop on
-
-  <span className="amazonLogoText">
-    amazon
-    <span className="amazonSmile"></span>
-  </span>
-</a>
+            <a className="primaryBtn" href={amazonStoreUrl} target="_blank" rel="noopener noreferrer">
+              <span>Shop on</span>
+              <span className="amazonLogoText" aria-label="Amazon">
+                amazon
+                <span className="amazonSmile" aria-hidden="true"></span>
+              </span>
+            </a>
 
             <a className="secondaryBtn" href="#products">
               Explore Products
             </a>
           </div>
 
-          <div className="trustRow">
-            <div className="trustItem"><span>🌱</span><p>Premium Ingredients</p></div>
-            <div className="trustItem"><span>🧪</span><p>Science Backed</p></div>
-            <div className="trustItem"><span>🇺🇸</span><p>Made in USA</p></div>
-            <div className="trustItem"><span>✅</span><p>GMP Certified</p></div>
-          </div>
+          <ul className="trustRow" aria-label="Product trust badges">
+            <li className="trustItem"><span>🌱</span><p>Premium Ingredients</p></li>
+            <li className="trustItem"><span>🧪</span><p>Science Backed</p></li>
+            <li className="trustItem"><span>🇺🇸</span><p>Made in USA</p></li>
+            <li className="trustItem"><span>✅</span><p>GMP Certified</p></li>
+          </ul>
         </div>
 
         <div className="heroRight">
@@ -90,38 +85,107 @@ export default function Home() {
         <strong>mindbodygreen</strong>
       </section>
 
-      <section id="products" className="contentSection">
-        <p className="sectionLabel">Product Family</p>
-        <h2>Explore the ForteMatic range.</h2>
-        <p>Targeted daily supplements for GLP-1 support, gut health, metabolism, energy, hormone balance and longevity.</p>
-      </section>
-
-      <section id="goals" className="contentSection softSection">
+      <section id="goals" className="contentSection softSection" aria-labelledby="goals-title">
         <p className="sectionLabel">Health Goals</p>
-        <h2>Support the way you want to feel every day.</h2>
-        <p>Choose formulas designed around appetite support, digestion, energy, metabolic health and long-term wellbeing.</p>
+        <h2 id="goals-title">Support the way you want to feel every day.</h2>
+        <div className="cardGrid">
+          <article><h3>GLP-1 support</h3><p>Daily support for appetite, fullness, cravings and metabolic wellness.</p></article>
+          <article><h3>Gut health</h3><p>Fiber supplement options and Akkermansia support for digestive balance.</p></article>
+          <article><h3>Energy & metabolism</h3><p>Targeted formulas for metabolism, energy and everyday performance.</p></article>
+          <article><h3>Hormone support</h3><p>DIM support for people looking to maintain healthy hormone balance.</p></article>
+          <article><h3>Longevity</h3><p>NAD+ and Spermidine support for cellular health and healthy aging routines.</p></article>
+          <article><h3>Daily wellness</h3><p>Simple supplement routines made for consistency, clarity and long-term health.</p></article>
+        </div>
       </section>
 
-      <section id="science" className="contentSection">
-        <p className="sectionLabel">Science</p>
-        <h2>Built around functional ingredients.</h2>
-        <p>ForteMatic formulas are designed for practical daily routines using supplement ingredients selected for wellness support.</p>
+      <section id="products" className="contentSection" aria-labelledby="products-title">
+        <p className="sectionLabel">Product Family</p>
+        <h2 id="products-title">Explore the ForteMatic range.</h2>
+        <div className="productGrid">
+          <article><h3>GLP-1 Support</h3><p>For appetite, fullness, gut health and metabolic support.</p></article>
+          <article><h3>Fiber Supplement</h3><p>Daily fiber support for digestion, regularity and gut wellness.</p></article>
+          <article><h3>NAD+</h3><p>Longevity support for energy, cellular health and healthy aging.</p></article>
+          <article><h3>Akkermansia</h3><p>Gut microbiome support for digestive and metabolic wellness.</p></article>
+          <article><h3>Spermidine</h3><p>Cellular health and longevity support for daily wellness routines.</p></article>
+          <article><h3>DIM</h3><p>Hormone support designed for balance and everyday wellbeing.</p></article>
+        </div>
       </section>
 
-      <section id="faq" className="contentSection softSection">
+      <section id="trust" className="contentSection softSection" aria-labelledby="trust-title">
+        <p className="sectionLabel">Why Customers Trust ForteMatic</p>
+        <h2 id="trust-title">Clean, practical supplements for modern wellness.</h2>
+        <ul className="checkList">
+          <li>Real supplement formulas built around daily health goals.</li>
+          <li>Clear product positioning for GLP-1 support, gut health, metabolism and longevity.</li>
+          <li>Premium ingredients selected for practical wellness routines.</li>
+          <li>Easy Amazon shopping with fast delivery and simple reordering.</li>
+        </ul>
+      </section>
+
+      <section id="reviews" className="contentSection" aria-labelledby="reviews-title">
+        <p className="sectionLabel">Social Proof</p>
+        <h2 id="reviews-title">Loved by everyday wellness customers.</h2>
+        <div className="reviewGrid">
+          <article><p>“Easy to add to my morning routine and I feel more consistent with my health goals.”</p><strong>★★★★★ Verified Customer</strong></article>
+          <article><p>“I like that the range covers gut health, energy, metabolism and longevity in one place.”</p><strong>★★★★★ Verified Customer</strong></article>
+          <article><p>“Clean branding, clear formulas and simple ordering through Amazon.”</p><strong>★★★★★ Verified Customer</strong></article>
+        </div>
+      </section>
+
+      <section id="faq" className="contentSection softSection" aria-labelledby="faq-title">
         <p className="sectionLabel">FAQ</p>
-        <h2>Frequently asked questions.</h2>
+        <h2 id="faq-title">Frequently asked questions.</h2>
 
         <details>
           <summary>Where can I buy ForteMatic?</summary>
-          <p>You can shop the ForteMatic range through our Amazon store.</p>
+          <p>You can shop the ForteMatic supplement range through our Amazon store.</p>
         </details>
 
         <details>
           <summary>What does ForteMatic GLP-1 support?</summary>
-          <p>ForteMatic GLP-1 is designed to support appetite, fullness, gut health and metabolic wellness.</p>
+          <p>ForteMatic GLP-1 support is designed for appetite, fullness, gut health and metabolic wellness.</p>
+        </details>
+
+        <details>
+          <summary>Does ForteMatic make a fiber supplement?</summary>
+          <p>Yes. ForteMatic offers fiber supplement support for digestion, regularity and gut health.</p>
+        </details>
+
+        <details>
+          <summary>What are NAD+, Akkermansia, Spermidine and DIM used for?</summary>
+          <p>NAD+ and Spermidine are commonly used in longevity routines, Akkermansia supports gut health, and DIM supports hormone balance.</p>
+        </details>
+
+        <details>
+          <summary>Are ForteMatic supplements a replacement for medical advice?</summary>
+          <p>No. Supplements are not intended to diagnose, treat, cure or prevent disease. Speak with a healthcare professional before starting a new supplement routine.</p>
         </details>
       </section>
+
+      <section className="newsletter" aria-labelledby="newsletter-title">
+        <p className="sectionLabel">Stay Connected</p>
+        <h2 id="newsletter-title">Get wellness updates and product news.</h2>
+        <form>
+          <label htmlFor="email">Email address</label>
+          <div className="emailRow">
+            <input id="email" name="email" type="email" placeholder="you@example.com" />
+            <button type="submit">Sign Up</button>
+          </div>
+        </form>
+      </section>
+
+      <footer className="footer">
+        <div>
+          <div className="footerLogo">ForteMatic<span className="registeredMark">®</span></div>
+          <p>Premium supplements for GLP-1 support, gut health, metabolism, energy, hormone support and longevity.</p>
+        </div>
+        <div className="footerLinks">
+          <a href="#products">Products</a>
+          <a href="#goals">Health Goals</a>
+          <a href="#faq">FAQ</a>
+          <a href={amazonStoreUrl} target="_blank" rel="noopener noreferrer">Amazon Store</a>
+        </div>
+      </footer>
     </main>
   );
 }
