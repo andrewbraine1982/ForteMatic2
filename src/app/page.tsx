@@ -43,14 +43,7 @@ export default function Home() {
   </div>
 </section>
 
-      <section className="heroCtaBar" aria-label="Shop ForteMatic supplements">
-        <a className="primaryButton" href={amazonStoreUrl} target="_blank" rel="noopener noreferrer">
-          Shop ForteMatic on Amazon
-        </a>
-        <a className="secondaryButton" href="#products">
-          Explore Products
-        </a>
-      </section>
+    
 
       <section className="asSeen" aria-labelledby="as-seen-title">
         <h2 id="as-seen-title">As Seen In</h2>
