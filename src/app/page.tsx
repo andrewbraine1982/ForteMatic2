@@ -21,26 +21,20 @@ export default function Home() {
           <a href="#faq">FAQ</a>
         </nav>
 
-        <a
-          className="navButton"
-          href={amazonStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="navButton" href={amazonStoreUrl} target="_blank" rel="noopener noreferrer">
           Shop Now
         </a>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="heroLeft">
-          <div className="stars" aria-label="Rated five stars by customers">
+          <div className="stars">
             <span className="greenStars">★★★★★</span>
             <span>60,000+ happy customers</span>
           </div>
 
           <h1 id="hero-title">
-            Elevate your everyday{" "}
-            <span className="italicWord">health.</span>
+            Elevate your everyday <span className="italicWord">health.</span>
           </h1>
 
           <p>
@@ -49,40 +43,20 @@ export default function Home() {
           </p>
 
           <div className="heroButtons">
-            <a
-              href={amazonStoreUrl}
-              className="primaryBtn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Shop on <span className="amazonWord">amazon</span>
+            <a className="primaryBtn" href={amazonStoreUrl} target="_blank" rel="noopener noreferrer">
+              Shop on <strong>amazon</strong>
             </a>
 
-            <a href="#products" className="secondaryBtn">
+            <a className="secondaryBtn" href="#products">
               Explore Products
             </a>
           </div>
 
-          <div className="trustRow" aria-label="ForteMatic trust badges">
-            <div className="trustItem">
-              <span>🌱</span>
-              <p>Premium Ingredients</p>
-            </div>
-
-            <div className="trustItem">
-              <span>🧪</span>
-              <p>Science Backed</p>
-            </div>
-
-            <div className="trustItem">
-              <span>🇺🇸</span>
-              <p>Made in USA</p>
-            </div>
-
-            <div className="trustItem">
-              <span>✅</span>
-              <p>GMP Certified</p>
-            </div>
+          <div className="trustRow">
+            <div className="trustItem"><span>🌱</span><p>Premium Ingredients</p></div>
+            <div className="trustItem"><span>🧪</span><p>Science Backed</p></div>
+            <div className="trustItem"><span>🇺🇸</span><p>Made in USA</p></div>
+            <div className="trustItem"><span>✅</span><p>GMP Certified</p></div>
           </div>
         </div>
 
@@ -107,28 +81,19 @@ export default function Home() {
       <section id="products" className="contentSection">
         <p className="sectionLabel">Product Family</p>
         <h2>Explore the ForteMatic range.</h2>
-        <p>
-          Targeted daily supplements for GLP-1 support, gut health, metabolism,
-          energy, hormone balance and longevity.
-        </p>
+        <p>Targeted daily supplements for GLP-1 support, gut health, metabolism, energy, hormone balance and longevity.</p>
       </section>
 
       <section id="goals" className="contentSection softSection">
         <p className="sectionLabel">Health Goals</p>
         <h2>Support the way you want to feel every day.</h2>
-        <p>
-          Choose formulas designed around appetite support, digestion, energy,
-          metabolic health and long-term wellbeing.
-        </p>
+        <p>Choose formulas designed around appetite support, digestion, energy, metabolic health and long-term wellbeing.</p>
       </section>
 
       <section id="science" className="contentSection">
         <p className="sectionLabel">Science</p>
         <h2>Built around functional ingredients.</h2>
-        <p>
-          ForteMatic formulas are designed for practical daily routines using
-          supplement ingredients selected for wellness support.
-        </p>
+        <p>ForteMatic formulas are designed for practical daily routines using supplement ingredients selected for wellness support.</p>
       </section>
 
       <section id="faq" className="contentSection softSection">
@@ -142,10 +107,7 @@ export default function Home() {
 
         <details>
           <summary>What does ForteMatic GLP-1 support?</summary>
-          <p>
-            ForteMatic GLP-1 is designed to support appetite, fullness, gut
-            health and metabolic wellness.
-          </p>
+          <p>ForteMatic GLP-1 is designed to support appetite, fullness, gut health and metabolic wellness.</p>
         </details>
       </section>
     </main>
