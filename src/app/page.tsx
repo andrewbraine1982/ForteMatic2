@@ -12,7 +12,9 @@ export default function Home() {
       </div>
 
       <header className="header">
-        <div className="logo">ForteMatic</div>
+      <div className="logo">
+  ForteMatic<span className="registeredMark">®</span>
+</div>
 
         <nav className="nav" aria-label="Main navigation">
           <a href="#products">Shop all</a>
