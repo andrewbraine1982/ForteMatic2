@@ -19,6 +19,8 @@ a {
   color: inherit;
 }
 
+/* TOP BAR */
+
 .topBar {
   height: 44px;
   background: #000;
@@ -32,6 +34,8 @@ a {
   font-weight: 800;
   white-space: nowrap;
 }
+
+/* HEADER */
 
 .header {
   height: 118px;
@@ -80,6 +84,8 @@ a {
   font-weight: 800;
   text-decoration: none;
 }
+
+/* HERO — PRESERVED */
 
 .hero {
   position: relative;
@@ -158,10 +164,6 @@ a {
   font-size: 18px;
   font-weight: 800;
   text-decoration: none;
-}
-
-.primaryBtn,
-.secondaryBtn {
   background: #0b9c43;
   color: #fff;
 }
@@ -246,13 +248,16 @@ a {
   transform: translateX(0%) translateY(-2%);
 }
 
+/* SEEN IN */
+
 .seenIn {
-  margin: 0 4% 70px;
+  margin: 0 4% 80px;
   padding: 30px;
   border: 1px solid #e8e8e8;
   border-radius: 18px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 24px;
   font-size: 22px;
   font-weight: 800;
@@ -265,15 +270,7 @@ a {
   letter-spacing: 0.08em;
 }
 
-.contentSection {
-  padding: 90px 8%;
-}
-
-.softSection {
-  background: #f7fbf8;
-  margin: 40px 4%;
-  border-radius: 32px;
-}
+/* SHARED */
 
 .sectionLabel {
   color: #0b9c43;
@@ -283,91 +280,257 @@ a {
   margin-bottom: 14px;
 }
 
+.contentSection {
+  padding: 80px 6%;
+}
+
 .contentSection h2,
-.newsletter h2 {
-  font-size: clamp(38px, 4vw, 58px);
-  line-height: 1.05;
-  margin-bottom: 24px;
-  letter-spacing: -0.05em;
+.rangeSection h2,
+.featureSection h2,
+.galleryTitle,
+.reviewsTitle,
+.faqSection h2,
+.newsletterSection h2 {
+  font-size: clamp(40px, 4.5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+}
+
+/* HEALTH GOALS */
+
+#goals {
+  text-align: center;
+}
+
+#goals h2 {
   max-width: 900px;
+  margin: 0 auto 34px;
 }
 
-.contentSection > p {
-  font-size: 22px;
-  line-height: 1.6;
-  color: #444;
-  max-width: 760px;
+.goalPills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  max-width: 1050px;
+  margin: 0 auto;
 }
 
-.cardGrid,
-.productGrid,
-.reviewGrid {
+.goalPills span {
+  padding: 16px 22px;
+  border-radius: 999px;
+  background: #f2f8f3;
+  border: 1px solid #dceee0;
+  color: #111;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+/* RANGE SECTION */
+
+.rangeSection {
+  margin: 30px 4% 90px;
+  border-radius: 42px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #96d86d, #f4d64d 45%, #f79a47);
+}
+
+.rangeContent {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 34px;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  min-height: 560px;
+  padding: 70px 6%;
+  gap: 30px;
 }
 
-.cardGrid article,
-.productGrid article,
-.reviewGrid article {
-  border: 1px solid #e6e6e6;
-  border-radius: 22px;
-  padding: 28px;
-  background: #fff;
+.rangeContent .sectionLabel {
+  color: #111;
 }
 
-.cardGrid h3,
-.productGrid h3 {
-  font-size: 25px;
-  margin-bottom: 12px;
-  letter-spacing: -0.03em;
-}
-
-.cardGrid p,
-.productGrid p,
-.reviewGrid p {
-  font-size: 18px;
+.rangeText {
+  max-width: 520px;
+  margin-top: 22px;
+  font-size: 22px;
   line-height: 1.55;
-  color: #444;
+  color: #222;
+  font-weight: 700;
 }
 
-.reviewGrid strong {
+.rangeImage {
+  width: 100%;
+  max-width: 780px;
+  justify-self: end;
   display: block;
-  margin-top: 18px;
-  color: #0b9c43;
-  font-size: 15px;
 }
 
-.checkList {
-  list-style: none;
+/* FEATURE SECTION */
+
+.featureSection {
   display: grid;
-  gap: 18px;
-  max-width: 850px;
-  margin-top: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: stretch;
+  padding: 0 4% 90px;
 }
 
-.checkList li {
+.featureImageWrap {
+  border-radius: 42px;
+  overflow: hidden;
+  min-height: 620px;
+  background: #e9f6e7;
+}
+
+.featureImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featureContent {
+  border-radius: 42px;
+  background: #101010;
+  color: #fff;
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featureContent .sectionLabel {
+  color: #8ee6a9;
+}
+
+.featureContent p {
+  margin-top: 24px;
   font-size: 22px;
-  line-height: 1.45;
+  line-height: 1.55;
+  color: #e5e5e5;
+}
+
+.featureList {
+  margin: 30px 0;
+  display: grid;
+  gap: 16px;
+  list-style: none;
+}
+
+.featureList li {
+  font-size: 20px;
   font-weight: 800;
-  padding-left: 40px;
+  padding-left: 34px;
   position: relative;
 }
 
-.checkList li::before {
+.featureList li::before {
   content: "✓";
   position: absolute;
   left: 0;
-  top: 0;
+  color: #8ee6a9;
+}
+
+.featureButton {
+  width: fit-content;
+  background: #0b9c43;
+  color: #fff;
+  padding: 20px 32px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+/* GALLERY */
+
+.gallerySection {
+  padding: 90px 4%;
+  text-align: center;
+  background: #fafafa;
+}
+
+.centerLabel {
+  text-align: center;
+}
+
+.galleryTitle,
+.reviewsTitle {
+  max-width: 880px;
+  margin: 0 auto 40px;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.galleryGrid img {
+  width: 100%;
+  aspect-ratio: 1 / 1.12;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+  background: #eee;
+}
+
+/* REVIEWS */
+
+.reviewsSection {
+  padding: 90px 6%;
+  text-align: center;
+}
+
+.reviewCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.reviewCards article {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 28px;
+  padding: 36px;
+  text-align: left;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.reviewCards div {
   color: #0b9c43;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.reviewCards p {
+  font-size: 21px;
+  line-height: 1.45;
+  font-weight: 800;
+  color: #111;
+}
+
+/* FAQ */
+
+.faqSection {
+  margin: 40px 4% 90px;
+  padding: 80px 8%;
+  border-radius: 42px;
+  background: #f2f8f3;
+}
+
+.faqSection h2 {
+  margin-bottom: 34px;
+  max-width: 800px;
 }
 
 details {
-  max-width: 900px;
-  border: 1px solid #e7e7e7;
-  border-radius: 16px;
-  padding: 20px 24px;
+  max-width: 980px;
+  border: 1px solid #dfe9e1;
+  border-radius: 18px;
+  padding: 24px 28px;
   margin-bottom: 14px;
   background: #fff;
 }
@@ -375,57 +538,64 @@ details {
 summary {
   cursor: pointer;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 21px;
 }
 
 details p {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 18px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: #444;
 }
 
-.newsletter {
-  margin: 70px 4%;
-  padding: 70px 8%;
-  border-radius: 32px;
-  background: #111;
+/* NEWSLETTER */
+
+.newsletterSection {
+  margin: 0 4% 90px;
+  border-radius: 42px;
+  overflow: hidden;
+  background: #101010;
   color: #fff;
 }
 
-.newsletter .sectionLabel {
+.newsletterContent {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 20px;
+  min-height: 520px;
+  padding: 70px 7%;
+}
+
+.newsletterSection .sectionLabel {
   color: #8ee6a9;
 }
 
-.newsletter form {
-  max-width: 650px;
+.newsletterSection h2 {
+  max-width: 720px;
+  margin-bottom: 30px;
 }
 
-.newsletter label {
-  display: block;
-  font-weight: 900;
-  margin-bottom: 12px;
-}
-
-.emailRow {
+.newsletterForm {
   display: flex;
   gap: 12px;
+  max-width: 620px;
 }
 
-.emailRow input {
+.newsletterForm input {
   flex: 1;
-  min-height: 60px;
+  min-height: 64px;
   border: 0;
-  border-radius: 14px;
-  padding: 0 18px;
+  border-radius: 999px;
+  padding: 0 24px;
   font-size: 18px;
 }
 
-.emailRow button {
-  min-height: 60px;
+.newsletterForm button {
+  min-height: 64px;
   border: 0;
-  border-radius: 14px;
-  padding: 0 28px;
+  border-radius: 999px;
+  padding: 0 32px;
   background: #0b9c43;
   color: #fff;
   font-size: 18px;
@@ -433,12 +603,22 @@ details p {
   cursor: pointer;
 }
 
+.newsletterBottle {
+  width: 100%;
+  max-width: 520px;
+  justify-self: end;
+  display: block;
+}
+
+/* FOOTER */
+
 .footer {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 40px;
-  padding: 60px 5%;
+  padding: 70px 5%;
   border-top: 1px solid #e8e8e8;
+  background: #fff;
 }
 
 .footerLogo {
@@ -447,21 +627,23 @@ details p {
 }
 
 .footer p {
-  max-width: 620px;
+  max-width: 650px;
   color: #444;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
 .footerLinks {
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .footerLinks a {
-  font-weight: 800;
+  font-weight: 900;
   text-decoration: none;
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 1100px) {
   .topBar {
@@ -498,14 +680,13 @@ details p {
   .heroRight {
     min-height: auto;
     justify-content: center;
+    margin-right: 0;
   }
 
   .heroImage {
-  width: min(1500px, 96vw);
-  max-width: none;
-  height: auto;
-  transform: translateX(0%) translateY(-2%);
-}
+    width: 100%;
+    transform: none;
+  }
 
   .trustRow {
     grid-template-columns: repeat(2, max-content);
@@ -516,14 +697,31 @@ details p {
     justify-content: center;
   }
 
-  .cardGrid,
-  .productGrid,
-  .reviewGrid,
+  .rangeContent,
+  .featureSection,
+  .newsletterContent,
   .footer {
     grid-template-columns: 1fr;
   }
 
-  .emailRow {
+  .rangeImage,
+  .newsletterBottle {
+    justify-self: center;
+  }
+
+  .featureImageWrap {
+    min-height: 420px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviewCards {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletterForm {
     flex-direction: column;
   }
 }
@@ -547,7 +745,37 @@ details p {
   }
 
   .contentSection,
-  .newsletter {
+  .gallerySection,
+  .reviewsSection,
+  .faqSection {
     padding: 56px 6%;
+  }
+
+  .rangeContent,
+  .featureContent,
+  .newsletterContent {
+    padding: 52px 6%;
+  }
+
+  .rangeSection,
+  .faqSection,
+  .newsletterSection {
+    margin-left: 4%;
+    margin-right: 4%;
+    border-radius: 28px;
+  }
+
+  .featureSection {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .featureImageWrap,
+  .featureContent {
+    border-radius: 28px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
   }
 }
