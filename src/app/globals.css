@@ -852,3 +852,72 @@ box-shadow:0 18px 40px rgba(212,175,55,.35);
     grid-template-columns: 1fr;
   }
 }
+/* ============================
+   TRUST BAR
+============================ */
+
+.statsBar{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+padding:70px 5%;
+
+background:#fafafa;
+
+}
+
+.statCard{
+
+background:white;
+
+padding:45px;
+
+border-radius:24px;
+
+text-align:center;
+
+box-shadow:0 12px 40px rgba(0,0,0,.06);
+
+transition:all .35s ease;
+
+border:1px solid #ececec;
+
+}
+
+.statCard:hover{
+
+transform:translateY(-8px);
+
+border-color:#D4AF37;
+
+box-shadow:0 20px 50px rgba(212,175,55,.20);
+
+}
+
+.statCard h3{
+
+font-size:54px;
+
+font-weight:900;
+
+color:#0b9c43;
+
+margin-bottom:12px;
+
+letter-spacing:-2px;
+
+}
+
+.statCard p{
+
+font-size:18px;
+
+font-weight:800;
+
+color:#444;
+
+}
