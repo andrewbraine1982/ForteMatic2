@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import ClosingExperience from "./components/ClosingExperience";
 
 type AnimatedNumberProps = {
   end: number;
@@ -411,25 +412,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="footer">
-        <div>
-          <div className="footerLogo">
-            ForteMatic<span className="registeredMark">®</span>
-          </div>
-
-          <p>
-            Premium supplements supporting GLP-1 support, gut health,
-            metabolism, energy, hormone support and longevity.
-          </p>
-        </div>
-
-        <div className="footerLinks">
-          <a href="#products">Products</a>
-          <a href="#goals">Health Goals</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#faq">FAQ</a>
-        </div>
-      </footer>
+    <ClosingExperience amazonStoreUrl={amazonStoreUrl} />
     </main>
   );
 }
