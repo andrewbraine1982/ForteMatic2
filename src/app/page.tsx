@@ -1,4 +1,78 @@
-import StatsBar from "./components/StatsBar";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+type AnimatedNumberProps = {
+  end: number;
+  suffix?: string;
+  duration?: number;
+};
+
+function AnimatedNumber({
+  end,
+  suffix = "",
+  duration = 1600,
+}: AnimatedNumberProps) {
+  const [value, setValue] = useState(0);
+  const numberRef = useRef<HTMLSpanElement | null>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const element = numberRef.current;
+
+    if (!element) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || hasAnimated.current) {
+          return;
+        }
+
+        hasAnimated.current = true;
+
+        const startTime = performance.now();
+
+        const animate = (currentTime: number) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          const easedProgress = 1 - Math.pow(1 - progress, 3);
+          const currentValue = Math.floor(end * easedProgress);
+
+          setValue(currentValue);
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            setValue(end);
+          }
+        };
+
+        requestAnimationFrame(animate);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.35,
+      }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [duration, end]);
+
+  return (
+    <span ref={numberRef}>
+      {value.toLocaleString("en-US")}
+      {suffix}
+    </span>
+  );
+}
+
 export default function Home() {
   const amazonStoreUrl =
     "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
@@ -58,6 +132,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <span>Shop on</span>
+
               <span className="amazonLogoText">
                 amazon
                 <span className="amazonSmile"></span>
@@ -74,14 +149,17 @@ export default function Home() {
               <span>🌱</span>
               <p>Premium Ingredients</p>
             </li>
+
             <li className="trustItem">
               <span>🧪</span>
               <p>Science Backed</p>
             </li>
+
             <li className="trustItem">
               <span>🇺🇸</span>
               <p>Made in USA</p>
             </li>
+
             <li className="trustItem">
               <span>✅</span>
               <p>GMP Certified</p>
@@ -106,32 +184,40 @@ export default function Home() {
         <strong>Healthline</strong>
         <strong>mindbodygreen</strong>
       </section>
+
       <section className="statsBar">
+        <div className="statCard">
+          <h3>
+            <AnimatedNumber end={60000} suffix="+" />
+          </h3>
+          <p>Happy Customers</p>
+        </div>
 
-  <div className="statCard">
-    <h3>60,000+</h3>
-    <p>Happy Customers</p>
-  </div>
+        <div className="statCard">
+          <h3>
+            <AnimatedNumber end={10000} suffix="+" />
+          </h3>
+          <p>5★ Reviews</p>
+        </div>
 
-  <div className="statCard">
-    <h3>10,000+</h3>
-    <p>5★ Reviews</p>
-  </div>
+        <div className="statCard">
+          <h3>
+            <AnimatedNumber end={20} suffix="+" />
+          </h3>
+          <p>Countries Served</p>
+        </div>
 
-  <div className="statCard">
-    <h3>20+</h3>
-    <p>Countries Served</p>
-  </div>
-
-  <div className="statCard">
-    <h3>30-Day</h3>
-    <p>Money Back Guarantee</p>
-  </div>
-
-</section>
+        <div className="statCard">
+          <h3>
+            <AnimatedNumber end={30} suffix="-Day" />
+          </h3>
+          <p>Money Back Guarantee</p>
+        </div>
+      </section>
 
       <section id="goals" className="contentSection">
         <p className="sectionLabel">Health Goals</p>
+
         <h2>Built around modern wellness goals.</h2>
 
         <div className="goalPills">
@@ -153,6 +239,7 @@ export default function Home() {
         <div className="rangeContent">
           <div>
             <p className="sectionLabel">Product Family</p>
+
             <h2>One brand. Multiple wellness goals.</h2>
 
             <p className="rangeText">
@@ -234,6 +321,7 @@ export default function Home() {
         <div className="reviewCards">
           <article>
             <div>★★★★★</div>
+
             <p>
               Easy to fit into my routine and the quality feels premium.
             </p>
@@ -241,6 +329,7 @@ export default function Home() {
 
           <article>
             <div>★★★★★</div>
+
             <p>
               Love having GLP-1 support, gut health and longevity products from
               one brand.
@@ -249,6 +338,7 @@ export default function Home() {
 
           <article>
             <div>★★★★★</div>
+
             <p>
               Fast delivery, clean branding and straightforward wellness
               products.
@@ -264,11 +354,13 @@ export default function Home() {
 
         <details>
           <summary>Where can I buy ForteMatic?</summary>
+
           <p>All products are available through the ForteMatic Amazon store.</p>
         </details>
 
         <details>
           <summary>What products does ForteMatic offer?</summary>
+
           <p>
             ForteMatic offers supplements for GLP-1 support, gut health,
             metabolism, energy, longevity and hormone support.
@@ -277,6 +369,7 @@ export default function Home() {
 
         <details>
           <summary>What are NAD+, Akkermansia and Spermidine?</summary>
+
           <p>
             Popular wellness ingredients commonly used in longevity and gut
             health routines.
@@ -285,6 +378,7 @@ export default function Home() {
 
         <details>
           <summary>Is DIM used for hormone support?</summary>
+
           <p>
             DIM is commonly used by individuals looking to support healthy
             hormone balance.
@@ -304,7 +398,8 @@ export default function Home() {
                 type="email"
                 placeholder="Enter your email address"
               />
-              <button>Subscribe</button>
+
+              <button type="button">Subscribe</button>
             </div>
           </div>
 
