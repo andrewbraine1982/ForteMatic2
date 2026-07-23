@@ -1,4 +1,5 @@
 "use client";
+import FooterProductStrip from "./FooterProductStrip";
 
 import { MouseEvent, useEffect, useRef, useState } from "react";
 
@@ -112,7 +113,10 @@ export default function ClosingExperience({
           </div>
         </div>
       </section>
-
+<FooterProductStrip
+  amazonStoreUrl={amazonStoreUrl}
+/>
+      
       <footer className="premiumFooter">
         <div className="footerGlow" aria-hidden="true"></div>
 
