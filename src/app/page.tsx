@@ -1,3 +1,4 @@
+import StatsBar from "./components/StatsBar";
 export default function Home() {
   const amazonStoreUrl =
     "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
