@@ -921,4 +921,567 @@ font-weight:800;
 color:#444;
 
 }
+/* ==========================================
+   CLOSING EXPERIENCE
+========================================== */
+
+.closingExperience {
+  --footer-mouse-x: 50%;
+  --footer-mouse-y: 50%;
+  --footer-image-x: 0px;
+  --footer-image-y: 0px;
+
+  position: relative;
+  overflow: hidden;
+  background: #07130d;
+}
+
+.brandStorySection {
+  position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.brandStoryImage {
+  position: absolute;
+  inset: -20px;
+  z-index: -3;
+
+  background-image: url("/fortematic-lifestyle.png");
+  background-size: cover;
+  background-position: center;
+
+  transform:
+    translate(
+      var(--footer-image-x),
+      var(--footer-image-y)
+    )
+    scale(1.035);
+
+  transition: transform 0.8s cubic-bezier(.2, .8, .2, 1);
+  animation: footerImageZoom 18s ease-in-out infinite alternate;
+}
+
+.brandStoryOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 14, 9, 0.94) 0%,
+      rgba(4, 20, 12, 0.83) 38%,
+      rgba(4, 18, 11, 0.28) 72%,
+      rgba(3, 13, 8, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(4, 16, 10, 0.72) 0%,
+      transparent 42%
+    );
+}
+
+.brandStoryContent {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 110px 0;
+  color: #ffffff;
+
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.2, .8, .2, 1);
+}
+
+.closingExperience.isVisible .brandStoryContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brandStoryEyebrow {
+  margin: 0 0 22px;
+  color: #e4c764;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.brandStoryContent h2 {
+  max-width: 720px;
+  margin: 0;
+
+  color: #ffffff;
+  font-size: clamp(3.2rem, 7vw, 6.8rem);
+  font-weight: 850;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.brandStoryContent h2 span {
+  color: #e4c764;
+}
+
+.brandStoryText {
+  max-width: 570px;
+  margin: 34px 0 0;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.brandStoryActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.closingPrimaryButton,
+.closingSecondaryButton {
+  min-height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 0 30px;
+  border-radius: 999px;
+
+  font-size: 0.94rem;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.closingPrimaryButton {
+  color: #07130d;
+  background: #e4c764;
+  box-shadow: 0 14px 34px rgba(228, 199, 100, 0.23);
+}
+
+.closingPrimaryButton span {
+  transition: transform 0.3s ease;
+}
+
+.closingPrimaryButton:hover {
+  transform: translateY(-4px);
+  background: #f0d77a;
+  box-shadow: 0 20px 46px rgba(228, 199, 100, 0.35);
+}
+
+.closingPrimaryButton:hover span {
+  transform: translateX(5px);
+}
+
+.closingSecondaryButton {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.closingSecondaryButton:hover {
+  transform: translateY(-4px);
+  color: #e4c764;
+  border-color: #e4c764;
+  background: rgba(228, 199, 100, 0.08);
+}
+
+/* ==========================================
+   PREMIUM FOOTER
+========================================== */
+
+.premiumFooter {
+  position: relative;
+  overflow: hidden;
+  padding: 82px max(24px, calc((100% - 1200px) / 2)) 34px;
+
+  color: rgba(255, 255, 255, 0.72);
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(30, 122, 73, 0.18),
+      transparent 34%
+    ),
+    #06110b;
+}
+
+.footerGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    440px circle at var(--footer-mouse-x) var(--footer-mouse-y),
+    rgba(228, 199, 100, 0.11),
+    transparent 62%
+  );
+}
+
+.premiumFooterTop,
+.footerTrustStrip,
+.premiumFooterBottom {
+  position: relative;
+  z-index: 1;
+}
+
+.premiumFooterTop {
+  display: grid;
+  grid-template-columns: 1.45fr 0.8fr 1fr 1.15fr;
+  gap: 54px;
+
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s ease 0.2s,
+    transform 0.9s cubic-bezier(.2, .8, .2, 1) 0.2s;
+}
+
+.closingExperience.isVisible .premiumFooterTop {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.premiumFooterLogo {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  color: #ffffff;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  text-decoration: none;
+}
+
+.premiumFooterLogo span {
+  margin-left: 4px;
+  color: #e4c764;
+  font-size: 0.42em;
+  vertical-align: top;
+}
+
+.premiumFooterLogo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -120%;
+  width: 52%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 236, 159, 0.68),
+    transparent
+  );
+
+  transform: skewX(-22deg);
+  transition: left 0.75s ease;
+}
+
+.premiumFooterLogo:hover::after {
+  left: 145%;
+}
+
+.premiumFooterBrand p {
+  max-width: 350px;
+  margin: 22px 0;
+  line-height: 1.8;
+}
+
+.footerEmail {
+  color: #e4c764;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.footerEmail:hover {
+  color: #ffffff;
+  text-shadow: 0 0 22px rgba(228, 199, 100, 0.5);
+}
+
+.premiumFooterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.premiumFooterColumn h3 {
+  margin: 5px 0 12px;
+  color: #ffffff;
+  font-size: 0.83rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.premiumFooterColumn a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.66);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.premiumFooterColumn a::after,
+.footerLegalLinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 100%;
+  height: 1px;
+
+  background: #e4c764;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.premiumFooterColumn a:hover,
+.footerLegalLinks a:hover {
+  color: #e4c764;
+  transform: translateX(3px);
+}
+
+.premiumFooterColumn a:hover::after,
+.footerLegalLinks a:hover::after {
+  transform: scaleX(1);
+}
+
+.premiumFooterCompany strong {
+  color: #ffffff;
+  font-size: 0.98rem;
+}
+
+.premiumFooterCompany address {
+  color: rgba(255, 255, 255, 0.62);
+  font-style: normal;
+  line-height: 1.75;
+}
+
+.footerTrustStrip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+
+  margin-top: 68px;
+  padding: 28px 0;
+
+  border-top: 1px solid rgba(228, 199, 100, 0.22);
+  border-bottom: 1px solid rgba(228, 199, 100, 0.22);
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s ease 0.42s,
+    transform 0.9s cubic-bezier(.2, .8, .2, 1) 0.42s;
+}
+
+.closingExperience.isVisible .footerTrustStrip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footerTrustItem {
+  padding: 16px 18px;
+  border-radius: 16px;
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.footerTrustItem span {
+  display: block;
+  color: #e4c764;
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+.footerTrustItem p {
+  margin: 7px 0 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.footerTrustItem:hover {
+  transform: translateY(-5px);
+  background: rgba(228, 199, 100, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+.premiumFooterBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 34px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.9s ease 0.62s,
+    transform 0.9s cubic-bezier(.2, .8, .2, 1) 0.62s;
+}
+
+.closingExperience.isVisible .premiumFooterBottom {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.premiumFooterBottom p {
+  margin: 7px 0 0;
+  font-size: 0.78rem;
+}
+
+.premiumFooterBottom .footerSignature {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.footerLegalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footerLegalLinks a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+@keyframes footerImageZoom {
+  from {
+    background-size: 100%;
+  }
+
+  to {
+    background-size: 104%;
+  }
+}
+
+/* ==========================================
+   CLOSING EXPERIENCE RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+  .premiumFooterTop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerTrustStrip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .brandStorySection {
+    min-height: 720px;
+    align-items: flex-end;
+  }
+
+  .brandStoryImage {
+    background-position: 64% center;
+  }
+
+  .brandStoryOverlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(3, 14, 9, 0.98) 0%,
+        rgba(4, 18, 11, 0.85) 52%,
+        rgba(4, 18, 11, 0.24) 100%
+      );
+  }
+
+  .brandStoryContent {
+    width: min(100% - 36px, 1200px);
+    padding: 80px 0 62px;
+  }
+
+  .brandStoryContent h2 {
+    font-size: clamp(3.1rem, 15vw, 5.2rem);
+  }
+
+  .brandStoryActions {
+    flex-direction: column;
+  }
+
+  .closingPrimaryButton,
+  .closingSecondaryButton {
+    width: 100%;
+  }
+
+  .premiumFooter {
+    padding: 64px 20px 28px;
+  }
+
+  .premiumFooterTop {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .footerTrustStrip {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 48px;
+  }
+
+  .premiumFooterBottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 430px) {
+  .footerTrustStrip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brandStoryImage {
+    animation: none;
+    transform: none;
+  }
+
+  .brandStoryContent,
+  .premiumFooterTop,
+  .footerTrustStrip,
+  .premiumFooterBottom {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
