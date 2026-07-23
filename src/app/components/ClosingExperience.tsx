@@ -1,5 +1,5 @@
 "use client";
-import FooterProductStrip from "./FooterProductStrip";
+import ProductShowcase from "./ProductShowcase";
 
 import { MouseEvent, useEffect, useRef, useState } from "react";
 
@@ -113,7 +113,7 @@ export default function ClosingExperience({
           </div>
         </div>
       </section>
-<FooterProductStrip
+<ProductShowcase
   amazonStoreUrl={amazonStoreUrl}
 />
       
