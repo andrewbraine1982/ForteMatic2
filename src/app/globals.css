@@ -1484,4 +1484,720 @@ color:#444;
     transition: none;
   }
 }
+/* ==========================================
+   INTERACTIVE PRODUCT SHOWCASE
+========================================== */
+
+.productShowcase {
+  --showcase-accent: 76, 145, 255;
+  --showcase-mouse-x: 50%;
+  --showcase-mouse-y: 50%;
+  --showcase-bottle-x: 0px;
+  --showcase-bottle-y: 0px;
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  padding: 112px 24px 118px;
+
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(var(--showcase-accent), 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      #06110b 0%,
+      #081a11 48%,
+      #050e09 100%
+    );
+
+  transition: background 0.6s ease;
+}
+
+.productShowcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+
+  opacity: 0.19;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 54px 54px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+.productShowcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(1180px, calc(100% - 48px));
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(228, 199, 100, 0.55),
+    transparent
+  );
+}
+
+.productShowcasePointerGlow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    420px circle at
+      var(--showcase-mouse-x)
+      var(--showcase-mouse-y),
+    rgba(var(--showcase-accent), 0.11),
+    transparent 68%
+  );
+
+  transition: background 0.35s ease;
+}
+
+.productShowcaseInner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.productShowcaseHeader {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.productShowcaseHeader > p {
+  margin: 0 0 18px;
+
+  color: #e4c764;
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.productShowcaseHeader h2 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: clamp(2.7rem, 6vw, 5.6rem);
+  font-weight: 850;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.productShowcaseTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  max-width: 980px;
+  margin: 50px auto 0;
+  padding: 7px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+.productShowcaseTab {
+  position: relative;
+  min-height: 46px;
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 999px;
+
+  color: rgba(255, 255, 255, 0.58);
+  background: transparent;
+
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.productShowcaseTab:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.productShowcaseTab.isActive {
+  color: #08140d;
+  background: #e4c764;
+  box-shadow:
+    0 9px 26px rgba(228, 199, 100, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.productShowcaseStage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 100px);
+
+  min-height: 690px;
+  margin-top: 44px;
+}
+
+.productShowcaseVisual {
+  position: relative;
+  min-height: 640px;
+  display: grid;
+  place-items: center;
+  perspective: 1200px;
+}
+
+.productShowcaseHalo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: min(540px, 84%);
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(var(--showcase-accent), 0.28) 0%,
+      rgba(var(--showcase-accent), 0.1) 35%,
+      transparent 70%
+    );
+
+  filter: blur(8px);
+  transition: background 0.6s ease;
+  animation: productHaloBreath 5.5s ease-in-out infinite;
+}
+
+.productShowcaseOrbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  border: 1px solid rgba(var(--showcase-accent), 0.19);
+  border-radius: 50%;
+
+  transition: border-color 0.6s ease;
+}
+
+.productShowcaseOrbitOne {
+  width: 480px;
+  height: 480px;
+
+  transform: translate(-50%, -50%) rotateX(68deg);
+  animation: productOrbitOne 20s linear infinite;
+}
+
+.productShowcaseOrbitTwo {
+  width: 390px;
+  height: 520px;
+
+  transform: translate(-50%, -50%) rotateY(72deg);
+  animation: productOrbitTwo 26s linear infinite reverse;
+}
+
+.productShowcaseBottle {
+  position: relative;
+  z-index: 3;
+
+  width: min(430px, 82%);
+  height: 590px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  transform:
+    translate(
+      var(--showcase-bottle-x),
+      var(--showcase-bottle-y)
+    );
+
+  transition: transform 0.65s cubic-bezier(.2, .8, .2, 1);
+  animation:
+    productBottleArrival 0.72s cubic-bezier(.2, .8, .2, 1) both,
+    productBottleFloat 6s ease-in-out 0.72s infinite;
+}
+
+.productShowcaseBottle img {
+  display: block;
+  max-width: 100%;
+  max-height: 570px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 42px 34px rgba(0, 0, 0, 0.34))
+    drop-shadow(
+      0 0 34px
+      rgba(var(--showcase-accent), 0.16)
+    );
+
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
+
+.productShowcaseBottle:hover img {
+  transform: scale(1.025) rotate(1deg);
+
+  filter:
+    drop-shadow(0 48px 38px rgba(0, 0, 0, 0.4))
+    drop-shadow(
+      0 0 52px
+      rgba(var(--showcase-accent), 0.29)
+    );
+}
+
+.productShowcaseShadow {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 65px;
+
+  width: 260px;
+  height: 44px;
+
+  border-radius: 50%;
+  transform: translateX(-50%);
+
+  background: rgba(var(--showcase-accent), 0.24);
+  filter: blur(24px);
+
+  animation: productShadowBreath 6s ease-in-out infinite;
+}
+
+.productShowcaseContent {
+  position: relative;
+  z-index: 3;
+
+  max-width: 470px;
+  padding: 18px 0;
+
+  animation: productContentArrival 0.62s ease both;
+}
+
+.productShowcaseNumber {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin: 0 0 34px;
+
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.77rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+}
+
+.productShowcaseNumber span {
+  color: #e4c764;
+}
+
+.productShowcaseBenefit {
+  margin: 0 0 15px;
+
+  color: rgb(var(--showcase-accent));
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition: color 0.6s ease;
+}
+
+.productShowcaseContent h3 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: clamp(3.3rem, 6vw, 6.5rem);
+  font-weight: 880;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.productShowcaseDescription {
+  max-width: 450px;
+  margin: 28px 0 0;
+
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.productShowcaseRating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  margin-top: 27px;
+}
+
+.productShowcaseRating span {
+  color: #e4c764;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.productShowcaseRating p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.productShowcaseButton {
+  min-height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 34px;
+  padding: 0 31px;
+
+  border-radius: 999px;
+
+  color: #07130d;
+  background: #e4c764;
+  box-shadow:
+    0 16px 36px rgba(228, 199, 100, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+  font-size: 0.9rem;
+  font-weight: 850;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.productShowcaseButton span {
+  transition: transform 0.3s ease;
+}
+
+.productShowcaseButton:hover {
+  transform: translateY(-4px);
+  background: #f1d878;
+  box-shadow:
+    0 22px 48px rgba(228, 199, 100, 0.31),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.productShowcaseButton:hover span {
+  transform: translateX(6px);
+}
+
+.productShowcaseGuarantee {
+  margin: 16px 0 0 5px;
+
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.73rem;
+  font-weight: 650;
+}
+
+/* ==========================================
+   PRODUCT SHOWCASE ANIMATIONS
+========================================== */
+
+@keyframes productBottleArrival {
+  from {
+    opacity: 0;
+    transform:
+      translate(
+        calc(var(--showcase-bottle-x) + 34px),
+        calc(var(--showcase-bottle-y) + 24px)
+      )
+      scale(0.92)
+      rotate(4deg);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translate(
+        var(--showcase-bottle-x),
+        var(--showcase-bottle-y)
+      )
+      scale(1)
+      rotate(0);
+  }
+}
+
+@keyframes productBottleFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -12px;
+  }
+}
+
+@keyframes productContentArrival {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes productHaloBreath {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes productShadowBreath {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scaleX(0.9);
+  }
+
+  50% {
+    opacity: 0.82;
+    transform: translateX(-50%) scaleX(1.08);
+  }
+}
+
+@keyframes productOrbitOne {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotateX(68deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotateX(68deg)
+      rotateZ(360deg);
+  }
+}
+
+@keyframes productOrbitTwo {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotateY(72deg)
+      rotateZ(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotateY(72deg)
+      rotateZ(360deg);
+  }
+}
+
+/* ==========================================
+   PRODUCT SHOWCASE RESPONSIVE
+========================================== */
+
+@media (max-width: 960px) {
+  .productShowcase {
+    padding-top: 92px;
+    padding-bottom: 96px;
+  }
+
+  .productShowcaseTabs {
+    border-radius: 26px;
+  }
+
+  .productShowcaseStage {
+    grid-template-columns: 1fr;
+    gap: 4px;
+
+    min-height: auto;
+    margin-top: 34px;
+  }
+
+  .productShowcaseVisual {
+    min-height: 560px;
+  }
+
+  .productShowcaseBottle {
+    height: 520px;
+    width: min(390px, 75%);
+  }
+
+  .productShowcaseBottle img {
+    max-height: 500px;
+  }
+
+  .productShowcaseShadow {
+    bottom: 42px;
+  }
+
+  .productShowcaseContent {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .productShowcaseRating {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .productShowcase {
+    padding:
+      78px
+      18px
+      82px;
+  }
+
+  .productShowcaseHeader h2 {
+    font-size: clamp(2.65rem, 13vw, 4.2rem);
+  }
+
+  .productShowcaseTabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+
+    margin-top: 36px;
+    padding: 7px;
+    border-radius: 24px;
+  }
+
+  .productShowcaseTab {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .productShowcaseVisual {
+    min-height: 490px;
+  }
+
+  .productShowcaseBottle {
+    width: min(340px, 88%);
+    height: 450px;
+  }
+
+  .productShowcaseBottle img {
+    max-height: 430px;
+  }
+
+  .productShowcaseOrbitOne {
+    width: 340px;
+    height: 340px;
+  }
+
+  .productShowcaseOrbitTwo {
+    width: 270px;
+    height: 390px;
+  }
+
+  .productShowcaseShadow {
+    bottom: 30px;
+    width: 210px;
+  }
+
+  .productShowcaseContent h3 {
+    font-size: clamp(3.2rem, 17vw, 5.2rem);
+  }
+
+  .productShowcaseButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .productShowcaseTab {
+    font-size: 0.72rem;
+  }
+
+  .productShowcaseVisual {
+    min-height: 430px;
+  }
+
+  .productShowcaseBottle {
+    height: 400px;
+  }
+
+  .productShowcaseBottle img {
+    max-height: 380px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .productShowcaseBottle,
+  .productShowcaseHalo,
+  .productShowcaseShadow,
+  .productShowcaseOrbit,
+  .productShowcaseContent {
+    animation: none;
+  }
+
+  .productShowcaseBottle {
+    transform: none;
+  }
+}
 
