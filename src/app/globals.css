@@ -383,7 +383,38 @@ a {
 
   letter-spacing: .06em;
 }
+@keyframes seenTicker {
 
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+@media (max-width:768px){
+
+  .seenIn{
+    padding:22px;
+  }
+
+  .seenLabel{
+    display:none;
+  }
+
+  .seenTrack{
+    gap:50px;
+    animation-duration:18s;
+  }
+
+  .seenTrack span{
+    font-size:15px;
+  }
+
+}
 /* SHARED */
 
 .sectionLabel {
