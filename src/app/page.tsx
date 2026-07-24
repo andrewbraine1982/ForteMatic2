@@ -198,14 +198,12 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
             <li>Easy daily routine</li>
           </ul>
 
-          <a
-            className="featureButton"
-            href={amazonStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Shop GLP-1 Support
-          </a>
+         <a
+  className="featureButton"
+  href="https://fortematic.com/best-glp-1-supplement/"
+>
+  Learn More →
+</a>
         </div>
       </section>
 
