@@ -164,22 +164,20 @@
 }
 
 .heroRight {
-  order: 5;
-  width: 100vw;
-  min-height: auto;
-  height: auto;
-  margin: -8px 0 0;
-  margin-left: calc(50% - 50vw);
-  overflow: visible;
-  justify-content: center;
-  align-items: flex-start;
+  position: relative;
+  height: 100%;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: -4vw;
 }
 
 .heroImage {
-  width: 132%;
+  width: min(1500px, 96vw);
   max-width: none;
   height: auto;
-  transform: translateX(-2%);
+  transform: translateY(-2%);
 }
 .desktopHero {
   display: block;
