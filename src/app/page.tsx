@@ -123,6 +123,7 @@ const [showAllReviews, setShowAllReviews] = useState(false);
     <span>MINDBODYGREEN</span>
 
   </div>
+    </div>
 
 </section>
 
