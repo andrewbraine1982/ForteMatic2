@@ -28,7 +28,7 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
 
       <nav className={styles.nav}>
         <a href="#goals">Health Goals</a>
-        <a href="#products">Products</a>
+<a href="#find-your-formula">Products</a>
         <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
 
