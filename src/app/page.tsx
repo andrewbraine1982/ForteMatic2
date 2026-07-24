@@ -81,14 +81,30 @@ export default function Home() {
     "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
 const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 const [showAllReviews, setShowAllReviews] = useState(false);
+    const announcements = [
+    "🏷️ Subscribe & Save 15%",
+    "🚚 Free Delivery Over €50",
+    "🌿 Science-Backed. Plant-Powered.",
+    "🛡️ 30-Day Money Back Guarantee",
+  ];
+
+  const [announcementIndex, setAnnouncementIndex] = useState(0);
+    useEffect(() => {
+    const interval = window.setInterval(() => {
+      setAnnouncementIndex(
+        (currentIndex) => (currentIndex + 1) % announcements.length
+      );
+    }, 3500);
+
+    return () => window.clearInterval(interval);
+  }, []);
   return (
     <main>
-      <div className="topBar">
-        <span>🏷️ SUBSCRIBE & SAVE 15%</span>
-        <span>🚚 FREE DELIVERY OVER €50</span>
-        <span>🌿 SCIENCE-BACKED. PLANT-POWERED.</span>
-        <span>🛡️ 30-DAY MONEY BACK GUARANTEE</span>
-      </div>
+     <div className="topBar">
+  <span key={announcementIndex} className="announcementText">
+    {announcements[announcementIndex]}
+  </span>
+</div>
 
 <Header amazonStoreUrl={amazonStoreUrl} />
 
