@@ -31,14 +31,55 @@ a {
   height: 44px;
   background: #000;
   color: #fff;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 70px;
-  padding: 0 5%;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.topBarTrack {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+
+  animation: topTicker 26s linear infinite;
+}
+
+.topBarTrack span {
+  flex-shrink: 0;
   font-size: 14px;
   font-weight: 800;
-  white-space: nowrap;
+}
+
+@keyframes topTicker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width:768px) {
+
+  .topBar {
+    height: 38px;
+  }
+
+  .topBarTrack {
+    gap: 55px;
+    animation-duration: 18s;
+  }
+
+  .topBarTrack span {
+    font-size: 13px;
+  }
+
 }
 
 /* HEADER */
