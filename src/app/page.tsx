@@ -100,15 +100,29 @@ const [showAllReviews, setShowAllReviews] = useState(false);
 
 <Header amazonStoreUrl={amazonStoreUrl} />
 
-   <Hero amazonStoreUrl={amazonStoreUrl} />
-      <section className="seenIn">
-        <span>AS SEEN IN</span>
-        <strong>Forbes</strong>
-        <strong>Men’s Health</strong>
-        <strong>Women’s Health</strong>
-        <strong>Healthline</strong>
-        <strong>mindbodygreen</strong>
-      </section>
+<section className="seenIn">
+
+  <div className="seenLabel">
+    AS FEATURED IN
+  </div>
+
+  <div className="seenTrack">
+
+    <span>FORBES</span>
+    <span>MEN'S HEALTH</span>
+    <span>WOMEN'S HEALTH</span>
+    <span>HEALTHLINE</span>
+    <span>MINDBODYGREEN</span>
+
+    <span>FORBES</span>
+    <span>MEN'S HEALTH</span>
+    <span>WOMEN'S HEALTH</span>
+    <span>HEALTHLINE</span>
+    <span>MINDBODYGREEN</span>
+
+  </div>
+
+</section>
 
       <section className="statsBar">
         <div className="statCard">
