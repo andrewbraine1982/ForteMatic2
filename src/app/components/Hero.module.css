@@ -2,10 +2,9 @@
   position: relative;
   min-height: calc(100vh - 162px);
   display: grid;
-  grid-template-columns: minmax(320px, 560px) 1fr;
+  grid-template-columns: 38% 62%;
   align-items: center;
-  gap: 40px;
-  padding: 40px 5%;
+  padding: 34px 0 24px 4%;
   overflow: hidden;
 }
 
