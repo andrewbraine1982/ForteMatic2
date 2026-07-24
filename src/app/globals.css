@@ -2483,4 +2483,43 @@ max-width:260px;
   }
 
 }
+/* ===========================
+   MOBILE COMMUNITY GALLERY
+=========================== */
+
+.galleryToggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .mobileHiddenReview {
+    display: none;
+  }
+
+  .galleryGrid.expanded .mobileHiddenReview {
+    display: block;
+  }
+
+  .galleryToggle {
+    display: block;
+    margin: 28px auto 0;
+    padding: 14px 28px;
+
+    background: #16a34a;
+    color: white;
+
+    border: none;
+    border-radius: 999px;
+
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
 
