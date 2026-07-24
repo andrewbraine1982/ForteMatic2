@@ -3817,4 +3817,8 @@ html {
     transition: none;
   }
 }
+.activeNav {
+    color: #2b9cff;
+    font-weight: 700;
+}
 
