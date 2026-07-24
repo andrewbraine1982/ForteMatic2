@@ -99,6 +99,7 @@ const [showAllReviews, setShowAllReviews] = useState(false);
 </div>
 
 <Header amazonStoreUrl={amazonStoreUrl} />
+      <Hero amazonStoreUrl={amazonStoreUrl} />
 
 <section className="seenIn">
 
