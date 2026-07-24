@@ -38,9 +38,9 @@ export default function Hero({ amazonStoreUrl }: HeroProps) {
             </span>
           </a>
 
-          <a className={styles.secondaryBtn} href="#products">
-            Explore Products
-          </a>
+          <a className={styles.secondaryBtn} href="#find-your-formula">
+  Explore Products
+</a>
         </div>
 
         <ul className={styles.trustRow}>
