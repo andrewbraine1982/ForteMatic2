@@ -340,40 +340,52 @@ a {
 
 /* SEEN IN */
 
-.seenIn {
-  margin: 0 4% 80px;
-  padding: 30px;
-  border: 1px solid #e8e8e8;
-  border-radius: 18px;
-  background: #fff;
+.seenIn{
+    margin:0 4% 80px;
+    padding:30px;
 
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+    background:#fff;
+
+    border:1px solid #e8e8e8;
+    border-radius:20px;
+
+    display:grid;
+    grid-template-columns:260px 1fr;
+    align-items:center;
+
+    gap:40px;
 }
 
-.seenLabel {
-  flex: 0 0 260px;
+.seenLabel{
 
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 1.05;
+    font-size:22px;
+    font-weight:900;
+    line-height:1.05;
 
-  background: #fff;
-  position: relative;
-  z-index: 2;
+    border-right:1px solid #ececec;
+
+    padding-right:40px;
+
 }
 
-.seenTrack {
-  flex: 1;
+.seenTrack{
 
-  display: flex;
-  align-items: center;
-  gap: 70px;
+    overflow:hidden;
 
-  width: max-content;
+    white-space:nowrap;
 
-  animation: seenTicker 24s linear infinite;
+}
+.seenTrackInner{
+
+    display:flex;
+    align-items:center;
+
+    gap:70px;
+
+    width:max-content;
+
+    animation:seenTicker 24s linear infinite;
+
 }
 
 .seenTrack span {
