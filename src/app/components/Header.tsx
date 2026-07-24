@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
@@ -8,6 +9,7 @@ type HeaderProps = {
 };
 
 export default function Header({ amazonStoreUrl }: HeaderProps) {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -31,7 +33,12 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
 
 <a href="#products">Products</a>
 
-<a href="/mens-wellness">Men's Wellness</a>
+<a
+  href="/mens-wellness"
+  className={pathname === "/mens-wellness" ? styles.activeNav : ""}
+>
+  Men's Wellness
+</a>
 
 <a href="#reviews">Reviews</a>
 
