@@ -108,6 +108,7 @@ const [showAllReviews, setShowAllReviews] = useState(false);
   </div>
 
   <div className="seenTrack">
+    <div className="seenTrackInner">
 
     <span>FORBES</span>
     <span>MEN'S HEALTH</span>
