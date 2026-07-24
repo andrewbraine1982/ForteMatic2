@@ -181,6 +181,13 @@
   height: auto;
   transform: translateX(-2%);
 }
+.desktopHero {
+  display: block;
+}
+
+.mobileHero {
+  display: none;
+}
 
 /* ---------- TABLET ---------- */
 
@@ -314,6 +321,13 @@
     height: auto;
     transform: translateX(4%) translateY(0);
   }
+  .desktopHero {
+  display: none;
+}
+
+.mobileHero {
+  display: block;
+}
 
   /*
     Trust signals now reinforce the product image instead of
