@@ -1,0 +1,54 @@
+.header {
+  height: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  border-bottom: 1px solid #e8e8e8;
+  background: #fff;
+}
+
+.logo {
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  color: #000;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.registeredMark {
+  font-size: 0.28em;
+  vertical-align: top;
+  margin-left: 2px;
+}
+
+.nav {
+  display: flex;
+  gap: 34px;
+}
+
+.nav a {
+  color: #111;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.navButton {
+  background: #0b9c43;
+  color: white;
+  padding: 20px 38px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.navButton:hover {
+  background: #d4af37;
+  color: #111;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(212, 175, 55, 0.35);
+}
