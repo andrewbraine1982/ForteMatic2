@@ -77,7 +77,7 @@ function AnimatedNumber({
 export default function Home() {
   const amazonStoreUrl =
     "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
-
+const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <main>
       <div className="topBar">
@@ -87,27 +87,55 @@ export default function Home() {
         <span>🛡️ 30-DAY MONEY BACK GUARANTEE</span>
       </div>
 
-      <header className="header">
-        <a className="logo" href="/">
-          ForteMatic<span className="registeredMark">®</span>
-        </a>
+  <header className="header">
+  <a className="logo" href="/">
+    ForteMatic<span className="registeredMark">®</span>
+  </a>
 
-        <nav className="nav">
-          <a href="#goals">Health Goals</a>
-          <a href="#products">Products</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#faq">FAQ</a>
-        </nav>
+  <button
+    className="menuButton"
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    aria-label="Toggle menu"
+  >
+    {mobileMenuOpen ? "✕" : "☰"}
+  </button>
 
-        <a
-          className="navButton"
-          href={amazonStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Shop Now
-        </a>
-      </header>
+  <nav className={`nav ${mobileMenuOpen ? "open" : ""}`}>
+    <a href="#goals" onClick={() => setMobileMenuOpen(false)}>
+      Health Goals
+    </a>
+
+    <a href="#products" onClick={() => setMobileMenuOpen(false)}>
+      Products
+    </a>
+
+    <a href="#reviews" onClick={() => setMobileMenuOpen(false)}>
+      Reviews
+    </a>
+
+    <a href="#faq" onClick={() => setMobileMenuOpen(false)}>
+      FAQ
+    </a>
+
+    <a
+      className="navButton mobileOnly"
+      href={amazonStoreUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Shop Now
+    </a>
+  </nav>
+
+  <a
+    className="navButton desktopOnly"
+    href={amazonStoreUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Shop Now
+  </a>
+</header>
 
       <section className="hero">
         <div className="heroLeft">
