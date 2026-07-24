@@ -1,4 +1,5 @@
 "use client";
+import Header from "./components/Header";
 
 import { useEffect, useRef, useState } from "react";
 import ClosingExperience from "./components/ClosingExperience";
@@ -87,55 +88,7 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
         <span>🛡️ 30-DAY MONEY BACK GUARANTEE</span>
       </div>
 
-  <header className="header">
-  <a className="logo" href="/">
-    ForteMatic<span className="registeredMark">®</span>
-  </a>
-
-  <button
-    className="menuButton"
-    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-    aria-label="Toggle menu"
-  >
-    {mobileMenuOpen ? "✕" : "☰"}
-  </button>
-
-  <nav className={`nav ${mobileMenuOpen ? "open" : ""}`}>
-    <a href="#goals" onClick={() => setMobileMenuOpen(false)}>
-      Health Goals
-    </a>
-
-    <a href="#products" onClick={() => setMobileMenuOpen(false)}>
-      Products
-    </a>
-
-    <a href="#reviews" onClick={() => setMobileMenuOpen(false)}>
-      Reviews
-    </a>
-
-    <a href="#faq" onClick={() => setMobileMenuOpen(false)}>
-      FAQ
-    </a>
-
-    <a
-      className="navButton mobileOnly"
-      href={amazonStoreUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Shop Now
-    </a>
-  </nav>
-
-  <a
-    className="navButton desktopOnly"
-    href={amazonStoreUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Shop Now
-  </a>
-</header>
+<Header amazonStoreUrl={amazonStoreUrl} />
 
       <section className="hero">
         <div className="heroLeft">
