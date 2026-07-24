@@ -1,17 +1,20 @@
 "use client";
 
+import styles from "./Header.module.css";
+
 type HeaderProps = {
   amazonStoreUrl: string;
 };
 
 export default function Header({ amazonStoreUrl }: HeaderProps) {
   return (
-    <header className="header">
-      <a className="logo" href="/">
-        ForteMatic<span className="registeredMark">®</span>
+    <header className={styles.header}>
+      <a className={styles.logo} href="/">
+        ForteMatic
+        <span className={styles.registeredMark}>®</span>
       </a>
 
-      <nav className="nav">
+      <nav className={styles.nav}>
         <a href="#goals">Health Goals</a>
         <a href="#products">Products</a>
         <a href="#reviews">Reviews</a>
@@ -19,7 +22,7 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
       </nav>
 
       <a
-        className="navButton"
+        className={styles.navButton}
         href={amazonStoreUrl}
         target="_blank"
         rel="noopener noreferrer"
