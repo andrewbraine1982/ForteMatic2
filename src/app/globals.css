@@ -420,10 +420,10 @@ a {
     display:none;
   }
 
-  .seenTrack{
+.seenTrackInner{
     gap:50px;
     animation-duration:18s;
-  }
+}
 
   .seenTrack span{
     font-size:15px;
