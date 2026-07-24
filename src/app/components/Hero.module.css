@@ -209,13 +209,18 @@
     grid-template-columns: repeat(2, max-content);
   }
 
-  .heroRight {
-    margin-top: 20px;
-  }
+.heroRight {
+  min-height: auto;
+  margin-top: -10px;
+  margin-right: 0;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-  .heroImage {
-    max-width: 700px;
-  }
+.heroImage {
+  width: 118%;
+  max-width: 620px;
+  transform: translateY(-10px);
 }
 
 /* ---------- MOBILE ---------- */
@@ -279,7 +284,9 @@
     font-size: 17px;
   }
 
-  .heroImage {
-    max-width: 360px;
-  }
+ .heroImage {
+  width: 122%;
+  max-width: 560px;
+  transform: translateY(-8px);
+}
 }
