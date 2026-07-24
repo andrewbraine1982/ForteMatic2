@@ -27,10 +27,15 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
       </a>
 
       <nav className={styles.nav}>
-        <a href="#goals">Health Goals</a>
-<a href="#find-your-formula">Products</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
+    <a href="#goals">Health Goals</a>
+
+<a href="#products">Products</a>
+
+<a href="/mens-wellness">Men's Wellness</a>
+
+<a href="#reviews">Reviews</a>
+
+<a href="#faq">FAQ</a>
 
         <a
           className={styles.navButton}
