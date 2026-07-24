@@ -71,7 +71,7 @@ export default function ProductShowcase({
   const product = products[active];
 
   return (
-    <section className="productShowcase">
+ <section id="find-your-formula" className="productShowcase">
 
       <h2>Find Your Formula</h2>
 
