@@ -67,11 +67,19 @@ export default function Hero({ amazonStoreUrl }: HeroProps) {
       </div>
 
       <div className={styles.heroRight}>
-        <img
-          src="/hero-clean.png"
-          alt="ForteMatic supplements"
-          className={styles.heroImage}
-        />
+       <>
+  <img
+    src="/hero-clean.png"
+    alt="ForteMatic supplements"
+    className={`${styles.heroImage} ${styles.desktopHero}`}
+  />
+
+  <img
+    src="/hero_mobile.png"
+    alt="ForteMatic supplements"
+    className={`${styles.heroImage} ${styles.mobileHero}`}
+  />
+</>
       </div>
     </section>
   );
