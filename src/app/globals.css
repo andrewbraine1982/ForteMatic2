@@ -2462,4 +2462,25 @@ max-width:260px;
 }
 
 }
+@media (max-width: 768px) {
+
+  .statsBar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 40px 20px;
+  }
+
+  .statCard {
+    padding: 24px 16px;
+  }
+
+  .statCard h3 {
+    font-size: 1.6rem;
+  }
+
+  .statCard p {
+    font-size: 0.9rem;
+  }
+
+}
 
