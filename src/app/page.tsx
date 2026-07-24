@@ -80,6 +80,7 @@ export default function Home() {
   const amazonStoreUrl =
     "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
 const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const [showAllReviews, setShowAllReviews] = useState(false);
   return (
     <main>
       <div className="topBar">
@@ -207,23 +208,32 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
         </div>
       </section>
 
-      <section className="gallerySection">
-        <p className="sectionLabel centerLabel">Community</p>
+<section className="gallerySection">
+  <p className="sectionLabel centerLabel">Community</p>
 
-        <h2 className="galleryTitle">
-          Real people. Real wellness routines.
-        </h2>
+  <h2 className="galleryTitle">
+    Real people. Real wellness routines.
+  </h2>
 
-        <div className="galleryGrid">
-          {Array.from({ length: 10 }, (_, i) => (
-            <img
-              key={i}
-              src={`/review-${i + 1}.jpg`}
-              alt={`ForteMatic community image ${i + 1}`}
-            />
-          ))}
-        </div>
-      </section>
+  <div className={`galleryGrid ${showAllReviews ? "expanded" : ""}`}>
+    {Array.from({ length: 10 }, (_, i) => (
+      <img
+        key={i}
+        src={`/review-${i + 1}.jpg`}
+        alt={`ForteMatic community image ${i + 1}`}
+        className={!showAllReviews && i >= 4 ? "mobileHiddenReview" : ""}
+      />
+    ))}
+  </div>
+
+  <button
+    type="button"
+    className="galleryToggle"
+    onClick={() => setShowAllReviews(!showAllReviews)}
+  >
+    {showAllReviews ? "Show Less ↑" : "View More Reviews →"}
+  </button>
+</section>
 
       <section id="reviews" className="reviewsSection">
         <p className="sectionLabel centerLabel">Reviews</p>
