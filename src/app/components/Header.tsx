@@ -44,6 +44,14 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
       <nav className={styles.nav}>
         <a href={goalsLink}>Health Goals</a>
 
+        <a
+          href="https://fortematic.com/best-glp-1-supplement/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GLP-1
+        </a>
+
         <a href={productsLink}>Products</a>
 
         <a
@@ -89,6 +97,15 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
       >
         <a href={goalsLink} onClick={closeMenu}>
           Health Goals
+        </a>
+
+        <a
+          href="https://fortematic.com/best-glp-1-supplement/"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeMenu}
+        >
+          GLP-1
         </a>
 
         <a href={productsLink} onClick={closeMenu}>
