@@ -261,41 +261,7 @@ const [activeFaq, setActiveFaq] = useState(0);
   </button>
 </section>
 
-      <section id="reviews" className="reviewsSection">
-        <p className="sectionLabel centerLabel">Reviews</p>
-
-        <h2 className="reviewsTitle">
-          Why customers choose ForteMatic.
-        </h2>
-
-        <div className="reviewCards">
-          <article>
-            <div>★★★★★</div>
-
-            <p>
-              Easy to fit into my routine and the quality feels premium.
-            </p>
-          </article>
-
-          <article>
-            <div>★★★★★</div>
-
-            <p>
-              Love having GLP-1 support, gut health and longevity products from
-              one brand.
-            </p>
-          </article>
-
-          <article>
-            <div>★★★★★</div>
-
-            <p>
-              Fast delivery, clean branding and straightforward wellness
-              products.
-            </p>
-          </article>
-        </div>
-      </section>
+  <Reviews />
 
     <section id="faq" className="faqSection">
   <p className="sectionLabel">FAQ</p>
