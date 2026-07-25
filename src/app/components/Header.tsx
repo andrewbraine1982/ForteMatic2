@@ -39,7 +39,12 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
 >
   Men's Wellness
 </a>
-
+<a
+  href="/powders"
+  className={pathname === "/powders" ? styles.activeNav : ""}
+>
+  Powders
+</a>
 <a href="#reviews">Reviews</a>
 
 <a href="#faq">FAQ</a>
