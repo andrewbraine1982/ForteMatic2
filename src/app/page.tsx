@@ -81,7 +81,7 @@ export default function Home() {
     "https://www.amazon.com/stores/Fortematic/page/6163DE39-5041-406B-904E-F346876EB933?lp_asin=B0FKZ4HJ6D&ref_=ast_bln&store_ref=bl_ast_dp_brandlogo_sto";
 const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 const [showAllReviews, setShowAllReviews] = useState(false);
-
+const [activeFaq, setActiveFaq] = useState(0);
   return (
     <main>
  <div className="topBar">
@@ -296,45 +296,73 @@ const [showAllReviews, setShowAllReviews] = useState(false);
         </div>
       </section>
 
-      <section id="faq" className="faqSection">
-        <p className="sectionLabel">FAQ</p>
+    <section id="faq" className="faqSection">
+  <p className="sectionLabel">FAQ</p>
 
-        <h2>Frequently asked questions.</h2>
+  <h2>Frequently asked questions.</h2>
 
-        <details>
-          <summary>Where can I buy ForteMatic?</summary>
+  {[
+    {
+      q: "Where can I buy ForteMatic supplements?",
+      a: "ForteMatic supplements are available through our official Amazon store, making it easy to browse our full range of wellness products with fast delivery and trusted customer service.",
+    },
+    {
+      q: "What wellness goals do ForteMatic supplements support?",
+      a: "Our range is designed to support gut health, GLP-1 wellness routines, metabolism, energy, healthy ageing, hormone balance and everyday wellbeing using carefully selected ingredients.",
+    },
+    {
+      q: "What is Akkermansia?",
+      a: "Akkermansia is a naturally occurring beneficial gut bacterium that has become popular in digestive wellness research and is commonly included in modern gut health routines.",
+    },
+    {
+      q: "What is NAD+?",
+      a: "NAD+ is a naturally occurring coenzyme involved in cellular energy production. NAD+ support supplements are often chosen by people interested in healthy ageing and vitality.",
+    },
+    {
+      q: "What is Spermidine?",
+      a: "Spermidine is a naturally occurring compound found in foods such as wheat germ and soybeans. It is widely recognised for its role in healthy ageing research.",
+    },
+    {
+      q: "What is DIM used for?",
+      a: "DIM (Diindolylmethane) is commonly used to support healthy hormone balance and is popular among both men and women looking to maintain overall wellness.",
+    },
+    {
+      q: "Can ForteMatic supplements be taken alongside a healthy lifestyle?",
+      a: "Yes. Our supplements are designed to complement balanced nutrition, regular exercise and healthy daily habits as part of an overall wellness routine.",
+    },
+    {
+      q: "Why choose ForteMatic?",
+      a: "ForteMatic combines science-backed ingredients, premium formulations and trusted manufacturing standards to create supplements that fit easily into everyday wellness routines.",
+    },
+  ].map((faq, index) => (
+    <div
+      key={index}
+      className={`faqItem ${activeFaq === index ? "active" : ""}`}
+    >
+      <button
+        className="faqQuestion"
+        onClick={() =>
+          setActiveFaq(activeFaq === index ? -1 : index)
+        }
+      >
+        <span>{faq.q}</span>
 
-          <p>All products are available through the ForteMatic Amazon store.</p>
-        </details>
+        <span className="faqIcon">
+          {activeFaq === index ? "−" : "+"}
+        </span>
+      </button>
 
-        <details>
-          <summary>What products does ForteMatic offer?</summary>
-
-          <p>
-            ForteMatic offers supplements for GLP-1 support, gut health,
-            metabolism, energy, longevity and hormone support.
-          </p>
-        </details>
-
-        <details>
-          <summary>What are NAD+, Akkermansia and Spermidine?</summary>
-
-          <p>
-            Popular wellness ingredients commonly used in longevity and gut
-            health routines.
-          </p>
-        </details>
-
-        <details>
-          <summary>Is DIM used for hormone support?</summary>
-
-          <p>
-            DIM is commonly used by individuals looking to support healthy
-            hormone balance.
-          </p>
-        </details>
-      </section>
-
+      <div
+        className="faqAnswer"
+        style={{
+          maxHeight: activeFaq === index ? "220px" : "0",
+        }}
+      >
+        <p>{faq.a}</p>
+      </div>
+    </div>
+  ))}
+</section>
       <section className="newsletterSection">
         <div className="newsletterContent">
           <div>
