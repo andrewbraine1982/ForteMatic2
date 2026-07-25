@@ -4055,7 +4055,7 @@ html {
 }
 
 .faqAnswer p {
-  color: rgba(255,255,255,.72);
+  color: #444;
   line-height: 1.8;
   padding: 0 0 24px;
   margin: 0;
