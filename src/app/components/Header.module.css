@@ -32,10 +32,18 @@
 }
 
 .nav a {
-  color: #111;
-  font-size: 17px;
-  font-weight: 800;
-  text-decoration: none;
+    color: #111;
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.nav a:hover {
+    color: #d4af37;
+    text-shadow:
+        0 0 8px rgba(212,175,55,.45),
+        0 0 18px rgba(212,175,55,.25);
 }
 
 .navButton {
