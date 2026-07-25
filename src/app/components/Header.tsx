@@ -1,6 +1,6 @@
 "use client";
-import { usePathname } from "next/navigation";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
@@ -10,6 +10,8 @@ type HeaderProps = {
 
 export default function Header({ amazonStoreUrl }: HeaderProps) {
   const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -29,25 +31,35 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
       </a>
 
       <nav className={styles.nav}>
-    <a href="#goals">Health Goals</a>
+        <a href={isHome ? "#goals" : "/#goals"}>
+          Health Goals
+        </a>
 
-<a href="#products">Products</a>
+        <a href={isHome ? "#products" : "/#products"}>
+          Products
+        </a>
 
-<a
-  href="/mens-wellness"
-  className={pathname === "/mens-wellness" ? styles.activeNav : ""}
->
-  Men's Wellness
-</a>
-<a
-  href="/powders"
-  className={pathname === "/powders" ? styles.activeNav : ""}
->
-  Powders
-</a>
-<a href="#reviews">Reviews</a>
+        <a
+          href="/mens-wellness"
+          className={pathname === "/mens-wellness" ? styles.activeNav : ""}
+        >
+          Men's Wellness
+        </a>
 
-<a href="#faq">FAQ</a>
+        <a
+          href="/powders"
+          className={pathname === "/powders" ? styles.activeNav : ""}
+        >
+          Powders
+        </a>
+
+        <a href={isHome ? "#reviews" : "/#reviews"}>
+          Reviews
+        </a>
+
+        <a href={isHome ? "#faq" : "/#faq"}>
+          FAQ
+        </a>
 
         <a
           className={styles.navButton}
@@ -72,19 +84,45 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
           menuOpen ? styles.mobileMenuOpen : ""
         }`}
       >
-        <a href="#goals" onClick={closeMenu}>
+        <a
+          href={isHome ? "#goals" : "/#goals"}
+          onClick={closeMenu}
+        >
           Health Goals
         </a>
 
-        <a href="#products" onClick={closeMenu}>
+        <a
+          href={isHome ? "#products" : "/#products"}
+          onClick={closeMenu}
+        >
           Products
         </a>
 
-        <a href="#reviews" onClick={closeMenu}>
+        <a
+          href="/mens-wellness"
+          onClick={closeMenu}
+        >
+          Men's Wellness
+        </a>
+
+        <a
+          href="/powders"
+          onClick={closeMenu}
+        >
+          Powders
+        </a>
+
+        <a
+          href={isHome ? "#reviews" : "/#reviews"}
+          onClick={closeMenu}
+        >
           Reviews
         </a>
 
-        <a href="#faq" onClick={closeMenu}>
+        <a
+          href={isHome ? "#faq" : "/#faq"}
+          onClick={closeMenu}
+        >
           FAQ
         </a>
 
