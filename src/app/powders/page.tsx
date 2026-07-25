@@ -29,6 +29,11 @@ const powders = [
     subtitle: "Advanced Hydration",
     image: "/fortematic_electrolytes.png",
   },
+  {
+    name: "Hair Food",
+    subtitle: "Hair, Skin & Nails",
+    image: "/fortematic_hairfood.png",
+  },
 ];
 
 export default function PowdersPage() {
