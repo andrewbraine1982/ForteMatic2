@@ -32,7 +32,7 @@ const reviews: Review[] = [
     title: "Helped enormously with the impact of diverticular disease",
     review:
       "As other reviewers have noted, these are not inexpensive, but for anyone who has issues with regularity, I cannot recommend them enough. They have had a hugely positive impact on my dad's experience. Be patient for the first few days while your system gets used to them, especially if you previously had a low-fibre diet.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Edward Jazic",
