@@ -177,7 +177,7 @@ const [showAllReviews, setShowAllReviews] = useState(false);
         </div>
       </section>
 
-      <section id="products" className="rangeSection">
+<section className="rangeSection">
         <div className="rangeContent">
           <div>
             <p className="sectionLabel">Product Family</p>
