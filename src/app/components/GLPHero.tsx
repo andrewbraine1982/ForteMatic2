@@ -1,4 +1,5 @@
 "use client";
+import "./GLPHero.css";
 
 export default function GLPHero() {
   return (
