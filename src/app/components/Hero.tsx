@@ -30,12 +30,14 @@ export default function Hero({ amazonStoreUrl }: HeroProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className={styles.amazonPill}>
-              <img
-                src="/Amazon_logo.svg"
-                alt="Shop on Amazon"
-                className={styles.amazonLogo}
-              />
+            <span className={styles.buyText}>Buy now on</span>
+
+            <span className={styles.amazonText}>
+              Amazon
+            </span>
+
+            <span className={styles.arrow}>
+              →
             </span>
           </a>
 
