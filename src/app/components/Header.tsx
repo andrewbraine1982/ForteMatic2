@@ -35,13 +35,15 @@ export default function Header() {
     : "/#faq";
 
   return (
-    <header className={styles.header}>
-      <a className={styles.logo} href="/">
-        ForteMatic
-        <span className={styles.registeredMark}>®</span>
-      </a>
+  <header className={styles.header}>
+  <a className={styles.logo} href="/">
+    ForteMatic
+    <span className={styles.registeredMark}>®</span>
+  </a>
 
-      <nav className={styles.nav}>
+  <MarketSelector />
+
+  <nav className={styles.nav}>
         <a href={goalsLink}>Health Goals</a>
 
         <a
@@ -72,18 +74,14 @@ export default function Header() {
 
         <a href={faqLink}>FAQ</a>
 
-        <div className={styles.marketArea}>
-          <MarketSelector />
-
-          <a
-            className={styles.navButton}
-            href={market.amazonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Shop Now
-          </a>
-        </div>
+     <a
+  className={styles.navButton}
+  href={market.amazonUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Shop Now
+</a>
       </nav>
 
       <button
