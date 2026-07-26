@@ -42,7 +42,7 @@ export default function PowdersPage() {
 
   return (
     <main className="powdersPage">
-      <Header amazonStoreUrl={amazonStoreUrl} />
+  <Header />
 
       <section className="powdersHero">
         <p className="powdersEyebrow">FORTEMATIC LABS</p>
