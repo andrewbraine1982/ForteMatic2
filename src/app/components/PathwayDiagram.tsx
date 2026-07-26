@@ -6,10 +6,11 @@ export default function PathwayDiagram() {
     <>
       <GoldDivider />
 
-      <section className={styles.section}>
-
+      <section
+        id="how-it-works"
+        className={styles.section}
+      >
         <div className={styles.heading}>
-
           <span className={styles.eyebrow}>
             THE FORTEMATIC PATHWAY™
           </span>
@@ -26,11 +27,9 @@ export default function PathwayDiagram() {
             is designed to complement your body's natural processes through
             carefully selected nutritional ingredients.
           </p>
-
         </div>
 
         <div className={styles.diagram}>
-
           <div className={styles.node}>
             <div className={styles.circle}></div>
             <h3>Brain</h3>
@@ -74,9 +73,7 @@ export default function PathwayDiagram() {
             <h3>Metabolic Wellness</h3>
             <span>Healthy Lifestyle Support</span>
           </div>
-
         </div>
-
       </section>
     </>
   );
