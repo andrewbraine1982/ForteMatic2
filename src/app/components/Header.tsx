@@ -44,7 +44,7 @@ export default function Header() {
   <MarketSelector />
 
   <nav className={styles.nav}>
-        <a href={goalsLink}>Health Goals</a>
+      
 
      <a
   href="/glp-1"
@@ -96,9 +96,7 @@ export default function Header() {
           menuOpen ? styles.mobileMenuOpen : ""
         }`}
       >
-        <a href={goalsLink} onClick={closeMenu}>
-          Health Goals
-        </a>
+       
 
      <a
   href="/glp-1"
