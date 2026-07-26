@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Reviews from "./components/Reviews";
@@ -225,12 +226,12 @@ const [activeFaq, setActiveFaq] = useState(0);
             <li>Easy daily routine</li>
           </ul>
 
-         <a
+   <Link
+  href="/glp-1"
   className="featureButton"
-  href="https://fortematic.com/best-glp-1-supplement/"
 >
-  Learn More →
-</a>
+  Explore GLP-1 →
+</Link>
         </div>
       </section>
 
