@@ -456,4 +456,51 @@
 }
 .buyText
 .amazonText
+.buyText {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
+}
+
+.amazonText {
+  position: relative;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.amazonText::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  width: 92%;
+  height: 4px;
+  bottom: -7px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #ff9900 0%,
+    #ffb347 55%,
+    #ff9900 100%
+  );
+  transform: rotate(-8deg);
+  opacity: 0.95;
+}
+
+.arrow {
+  margin-left: 2px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  opacity: 0.85;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.primaryBtn:hover .arrow {
+  transform: translateX(6px);
+  opacity: 1;
+}
 
