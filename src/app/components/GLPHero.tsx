@@ -34,7 +34,7 @@ export default function GLPHero() {
           </a>
 
           <a
-            href="#pathway"
+            href="#how-it-works"
             className={styles.secondaryButton}
           >
             Learn How It Works
