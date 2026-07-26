@@ -46,13 +46,12 @@ export default function Header() {
   <nav className={styles.nav}>
         <a href={goalsLink}>Health Goals</a>
 
-        <a
-          href="https://fortematic.com/best-glp-1-supplement/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GLP-1
-        </a>
+     <a
+  href="/glp-1"
+  className={pathname === "/glp-1" ? styles.activeNav : styles.noWrap}
+>
+  GLP-1
+</a>
 
         <a href={productsLink}>Products</a>
 
@@ -101,14 +100,12 @@ export default function Header() {
           Health Goals
         </a>
 
-        <a
-          href="https://fortematic.com/best-glp-1-supplement/"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={closeMenu}
-        >
-          GLP-1
-        </a>
+     <a
+  href="/glp-1"
+  onClick={closeMenu}
+>
+  GLP-1
+</a>
 
         <a href={productsLink} onClick={closeMenu}>
           Products
