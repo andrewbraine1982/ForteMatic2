@@ -1,13 +1,14 @@
 "use client";
+
 import styles from "./GLPHero.module.css";
 
 export default function GLPHero() {
   return (
-    <section className="glpHero">
+    <section className={styles.glpHero}>
 
-      <div className="glpHeroContent">
+      <div className={styles.glpHeroContent}>
 
-        <span className="glpEyebrow">
+        <span className={styles.glpEyebrow}>
           FORTEMATIC GLP-1
         </span>
 
@@ -23,18 +24,18 @@ export default function GLPHero() {
           everyday wellness.
         </p>
 
-        <div className="glpButtons">
+        <div className={styles.glpButtons}>
 
           <a
             href="#"
-            className="primaryButton"
+            className={styles.primaryButton}
           >
             Shop on Amazon
           </a>
 
           <a
             href="#ingredients"
-            className="secondaryButton"
+            className={styles.secondaryButton}
           >
             Learn How It Works
           </a>
@@ -43,7 +44,7 @@ export default function GLPHero() {
 
       </div>
 
-      <div className="glpHeroImage">
+      <div className={styles.glpHeroImage}>
 
         {/* GLP-1 bottle image goes here */}
 
