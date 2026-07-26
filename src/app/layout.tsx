@@ -1,8 +1,9 @@
 import "./globals.css";
+import { MarketProvider } from "./components/MarketProvider";
 
 export const metadata = {
   title: "ForteMatic",
-  description: "Premium supplements designed to support everyday health."
+  description: "Premium supplements designed to support everyday health.",
 };
 
 export default function RootLayout({
@@ -12,7 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MarketProvider>
+          {children}
+        </MarketProvider>
+      </body>
     </html>
   );
 }
