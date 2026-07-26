@@ -1,5 +1,5 @@
 "use client";
-import "./GLPHero.css";
+import styles from "./GLPHero.module.css";
 
 export default function GLPHero() {
   return (
