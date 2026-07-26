@@ -90,7 +90,7 @@ export default function MensWellnessPage() {
 
   return (
     <main className="vpPage">
-      <Header amazonStoreUrl={amazonStoreUrl} />
+    <Header />
 
       {/* HERO */}
       <section className="vpHero">
