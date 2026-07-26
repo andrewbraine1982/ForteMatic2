@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import GLPHero from "../components/GLPHero";
 
 export default function GLP1Page() {
   return (
