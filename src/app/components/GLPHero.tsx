@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./GLPHero.module.css";
 
 export default function GLPHero() {
@@ -20,21 +21,21 @@ export default function GLPHero() {
 
         <p>
           A premium science-backed formula designed to
-          support appetite control, metabolic health and
-          everyday wellness.
+          support appetite control, metabolic health,
+          digestive wellness and everyday wellbeing.
         </p>
 
         <div className={styles.glpButtons}>
 
           <a
-            href="#"
+            href="#product"
             className={styles.primaryButton}
           >
-            Shop on Amazon
+            Discover The Formula
           </a>
 
           <a
-            href="#ingredients"
+            href="#pathway"
             className={styles.secondaryButton}
           >
             Learn How It Works
@@ -46,7 +47,20 @@ export default function GLPHero() {
 
       <div className={styles.glpHeroImage}>
 
-        {/* GLP-1 bottle image goes here */}
+        <div className={styles.heroGlow}></div>
+
+        <div className={styles.heroBottle}>
+
+          <Image
+            src="/products/GLP.png"
+            alt="ForteMatic GLP-1"
+            width={460}
+            height={680}
+            priority
+            className={styles.heroBottleImage}
+          />
+
+        </div>
 
       </div>
 
