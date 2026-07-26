@@ -159,67 +159,13 @@
     0 8px 18px rgba(0,0,0,.18);
 }
 
-.amazonLogoText{
-
-  position:relative;
-
-  display:inline-flex;
-
-  align-items:flex-end;
-
-  font-size:25px;
-
-  font-weight:900;
-
-  line-height:1;
-
-  letter-spacing:-.03em;
-
-  padding-bottom:10px;
-
-  color:#fff;
+.amazonLogo {
+  display: block;
+  width: 118px;
+  height: auto;
+  margin-left: 2px;
+  flex-shrink: 0;
 }
-
-.amazonSmile{
-
-  position:absolute;
-
-  left:4px;
-
-  bottom:1px;
-
-  width:60px;
-
-  height:15px;
-
-  border-bottom:2.8px solid #ff9900;
-
-  border-radius:0 0 80px 80px;
-
-  transform:rotate(-6deg);
-}
-
-.amazonSmile::after{
-
-  content:"";
-
-  position:absolute;
-
-  right:-1px;
-
-  bottom:-2px;
-
-  width:7px;
-
-  height:7px;
-
-  border-top:2.8px solid #ff9900;
-
-  border-right:2.8px solid #ff9900;
-
-  transform:rotate(38deg);
-}
-
 .trustRow {
   display: grid;
   grid-template-columns: repeat(4, max-content);
