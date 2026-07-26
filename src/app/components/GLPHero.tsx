@@ -6,9 +6,7 @@ import styles from "./GLPHero.module.css";
 export default function GLPHero() {
   return (
     <section className={styles.glpHero}>
-
       <div className={styles.glpHeroContent}>
-
         <span className={styles.glpEyebrow}>
           FORTEMATIC GLP-1
         </span>
@@ -26,12 +24,13 @@ export default function GLPHero() {
         </p>
 
         <div className={styles.glpButtons}>
-
           <a
-            href="#product"
+            href="https://www.amazon.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.primaryButton}
           >
-            Discover The Formula
+            Buy Now on Amazon
           </a>
 
           <a
@@ -40,17 +39,13 @@ export default function GLPHero() {
           >
             Learn How It Works
           </a>
-
         </div>
-
       </div>
 
       <div className={styles.glpHeroImage}>
-
         <div className={styles.heroGlow}></div>
 
         <div className={styles.heroBottle}>
-
           <Image
             src="/products/GLP.png"
             alt="ForteMatic GLP-1"
@@ -59,11 +54,8 @@ export default function GLPHero() {
             priority
             className={styles.heroBottleImage}
           />
-
         </div>
-
       </div>
-
     </section>
   );
 }
