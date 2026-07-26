@@ -28,27 +28,36 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 30px;
 }
 
 .nav a {
-    color: #111;
-    font-size: 17px;
-    font-weight: 800;
-    text-decoration: none;
-    transition: all 0.25s ease;
+  color: #111;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+.activeNav {
+  color: #d4af37 !important;
 }
 
 .nav a:hover {
-    color: #d4af37;
-    text-shadow:
-        0 0 8px rgba(212,175,55,.45),
-        0 0 18px rgba(212,175,55,.25);
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.45),
+    0 0 18px rgba(212, 175, 55, 0.25);
 }
 
 .navButton {
   background: #0b9c43;
-  color: white;
+  color: white !important;
   padding: 20px 38px;
   border-radius: 999px;
   font-size: 20px;
@@ -59,7 +68,7 @@
 
 .navButton:hover {
   background: #d4af37;
-  color: #111;
+  color: #111 !important;
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(212, 175, 55, 0.35);
 }
@@ -112,13 +121,10 @@
     width: 100%;
     background: white;
     border-top: 1px solid #ececec;
-
     display: flex;
     flex-direction: column;
-
     max-height: 0;
     overflow: hidden;
-
     transition: max-height 0.35s ease;
   }
 
