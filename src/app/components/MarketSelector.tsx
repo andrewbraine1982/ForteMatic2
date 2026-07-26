@@ -54,7 +54,9 @@ export default function MarketSelector() {
         className="marketButton"
         onClick={() => setOpen(!open)}
       >
-    <span className="marketGlobe">🌍</span>
+<span className="marketFlag">
+  {market.flag}
+</span>
 
 <span className="marketCode">
   {market.code}
