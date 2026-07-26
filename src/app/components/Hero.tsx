@@ -32,16 +32,20 @@ export default function Hero({ amazonStoreUrl }: HeroProps) {
           >
             <span>Shop on</span>
 
-       <span>Shop on</span>
-
-<span className={styles.amazonPill}>
-  <img
-    src="/Amazon_logo.svg"
-    alt="Shop on Amazon"
-    className={styles.amazonLogo}
-  />
-</span>
-          </a>
+<a
+  className={styles.primaryBtn}
+  href={amazonStoreUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span className={styles.amazonPill}>
+    <img
+      src="/Amazon_logo.svg"
+      alt="Shop on Amazon"
+      className={styles.amazonLogo}
+    />
+  </span>
+</a>
 
           <a className={styles.secondaryBtn} href="#find-your-formula">
   Explore Products
