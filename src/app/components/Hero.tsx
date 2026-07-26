@@ -30,29 +30,21 @@ export default function Hero({ amazonStoreUrl }: HeroProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>Shop on</span>
+            <span className={styles.amazonPill}>
+              <img
+                src="/Amazon_logo.svg"
+                alt="Shop on Amazon"
+                className={styles.amazonLogo}
+              />
+            </span>
+          </a>
 
-<a
-  className={styles.primaryBtn}
-  href={amazonStoreUrl}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <span className={styles.amazonPill}>
-    <img
-      src="/Amazon_logo.svg"
-      alt="Shop on Amazon"
-      className={styles.amazonLogo}
-    />
-  </span>
-</a>
-
-<a
-  className={styles.secondaryBtn}
-  href="#find-your-formula"
->
-  Explore Products
-</a>
+          <a
+            className={styles.secondaryBtn}
+            href="#find-your-formula"
+          >
+            Explore Products
+          </a>
         </div>
 
         <ul className={styles.trustRow}>
@@ -79,19 +71,19 @@ export default function Hero({ amazonStoreUrl }: HeroProps) {
       </div>
 
       <div className={styles.heroRight}>
-       <>
-  <img
-    src="/hero-clean.png"
-    alt="ForteMatic supplements"
-    className={`${styles.heroImage} ${styles.desktopHero}`}
-  />
+        <>
+          <img
+            src="/hero-clean.png"
+            alt="ForteMatic supplements"
+            className={`${styles.heroImage} ${styles.desktopHero}`}
+          />
 
-  <img
-    src="/hero_mobile.png"
-    alt="ForteMatic supplements"
-    className={`${styles.heroImage} ${styles.mobileHero}`}
-  />
-</>
+          <img
+            src="/hero_mobile.png"
+            alt="ForteMatic supplements"
+            className={`${styles.heroImage} ${styles.mobileHero}`}
+          />
+        </>
       </div>
     </section>
   );
