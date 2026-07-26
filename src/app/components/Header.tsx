@@ -3,12 +3,12 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
+import { useMarket } from "./MarketProvider";
+import MarketSelector from "./MarketSelector";
 
-type HeaderProps = {
-  amazonStoreUrl: string;
-};
+export default function Header() {
+  const { market } = useMarket();
 
-export default function Header({ amazonStoreUrl }: HeaderProps) {
   const pathname = usePathname();
 
   const isHome = pathname === "/";
@@ -72,14 +72,18 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
 
         <a href={faqLink}>FAQ</a>
 
-        <a
-          className={styles.navButton}
-          href={amazonStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Shop Now
-        </a>
+        <div className={styles.marketArea}>
+          <MarketSelector />
+
+          <a
+            className={styles.navButton}
+            href={market.amazonUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shop Now
+          </a>
+        </div>
       </nav>
 
       <button
@@ -130,7 +134,7 @@ export default function Header({ amazonStoreUrl }: HeaderProps) {
 
         <a
           className={styles.mobileButton}
-          href={amazonStoreUrl}
+          href={market.amazonUrl}
           target="_blank"
           rel="noopener noreferrer"
           onClick={closeMenu}
