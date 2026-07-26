@@ -99,7 +99,7 @@ const [activeFaq, setActiveFaq] = useState(0);
   </div>
 </div>
 
-<Header amazonStoreUrl={amazonStoreUrl} />
+<Header />
       <Hero amazonStoreUrl={amazonStoreUrl} />
 
 <section className="seenIn">
