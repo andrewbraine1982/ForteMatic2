@@ -46,11 +46,16 @@ export default function Header() {
   <nav className={styles.nav}>
       
 
-     <a
+<a
   href="/glp-1"
-  className={pathname === "/glp-1" ? styles.activeNav : styles.noWrap}
+  className={`${styles.glpNav} ${
+    pathname === "/glp-1" ? styles.activeNav : ""
+  }`}
 >
   GLP-1
+  <span className={styles.bestSellerBadge}>
+    BEST SELLER
+  </span>
 </a>
 
         <a href={productsLink}>Products</a>
