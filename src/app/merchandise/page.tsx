@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Merchandise.module.css";
-import styles from "./Merchandise.module.css";
-import Link from "next/link";
 
 export default function MerchandisePage() {
   return (
