@@ -34,7 +34,7 @@ export default function MerchandisePage() {
           </Link>
         </div>
 
-   <div className={styles.heroImage}>
+  <div className={styles.heroImage}>
   <Image
     src="/Merchandise_range.png"
     alt="ForteMatic Merchandise Collection"
@@ -43,9 +43,10 @@ export default function MerchandisePage() {
     className={styles.heroProductImage}
   />
 </div>
+</section>
 
-      {/* Brand Promise */}
-      <section className={styles.promiseBar}>
+{/* Brand Promise */}
+<section className={styles.promiseBar}>
         <div className={styles.promise}>
           <h3>Premium Quality</h3>
           <p>Crafted with care.</p>
