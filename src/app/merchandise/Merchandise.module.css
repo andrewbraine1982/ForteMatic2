@@ -238,16 +238,10 @@
   border-bottom: 1px solid rgba(13, 64, 43, 0.08);
 }
 
-.productImage::after {
-  content: "Product image";
-  display: grid;
-  place-items: center;
-  height: 100%;
-  color: rgba(12, 86, 56, 0.34);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.productPhoto {
+    object-fit: contain;
+    padding: 35px;
+    transition: transform .35s ease;
 }
 
 .card h2 {
@@ -521,4 +515,7 @@
   .waitlist {
     margin-inline: 16px;
   }
+}
+.card:hover .productPhoto {
+    transform: scale(1.06);
 }
