@@ -5,6 +5,9 @@ import Header from "../components/Header";
 
 export default function MerchandisePage() {
   return (
+  <>
+    <Header />
+
     <main className={styles.page}>
       {/* Hero */}
       <section className={styles.hero}>
@@ -200,5 +203,6 @@ export default function MerchandisePage() {
         </form>
       </section>
     </main>
+  </>
   );
 }
