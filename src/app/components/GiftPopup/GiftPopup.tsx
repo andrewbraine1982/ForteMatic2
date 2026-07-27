@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import styles from "./GiftPopup.module.css";
+import styles from "./module.css";
 
 const STORAGE_KEY = "fortematicGiftPopupDismissedAt";
 const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
