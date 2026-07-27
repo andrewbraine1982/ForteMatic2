@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./Merchandise.module.css";
 import styles from "./Merchandise.module.css";
 import Link from "next/link";
 
@@ -33,10 +36,15 @@ export default function MerchandisePage() {
           </Link>
         </div>
 
-        <div className={styles.heroImage}>
-          {/* Merchandise hero composition goes here */}
-        </div>
-      </section>
+   <div className={styles.heroImage}>
+  <Image
+    src="/Merchandise_range.png"
+    alt="ForteMatic Merchandise Collection"
+    fill
+    priority
+    className={styles.heroProductImage}
+  />
+</div>
 
       {/* Brand Promise */}
       <section className={styles.promiseBar}>
@@ -66,7 +74,14 @@ export default function MerchandisePage() {
         <article className={styles.card}>
           <span className={styles.badge}>COMING SOON</span>
 
-          <div className={styles.productImage}></div>
+        <div className={styles.productImage}>
+  <Image
+    src="/premium_shaker.png"
+    alt="Premium Shaker"
+    fill
+    className={styles.productPhoto}
+  />
+</div>
 
           <h2>Premium Shaker</h2>
 
@@ -85,7 +100,14 @@ export default function MerchandisePage() {
         <article className={styles.card}>
           <span className={styles.badge}>COMING SOON</span>
 
-          <div className={styles.productImage}></div>
+        <div className={styles.productImage}>
+  <Image
+    src="/insulated_bottle.png"
+    alt="Insulated Bottle"
+    fill
+    className={styles.productPhoto}
+  />
+</div>
 
           <h2>Insulated Bottle</h2>
 
@@ -104,7 +126,14 @@ export default function MerchandisePage() {
         <article className={styles.card}>
           <span className={styles.badge}>COMING SOON</span>
 
-          <div className={styles.productImage}></div>
+          <div className={styles.productImage}>
+  <Image
+    src="/premium_t_shirt.png"
+    alt="Premium T-Shirt"
+    fill
+    className={styles.productPhoto}
+  />
+</div>
 
           <h2>Premium T-Shirt</h2>
 
@@ -123,7 +152,14 @@ export default function MerchandisePage() {
         <article className={styles.card}>
           <span className={styles.badge}>COMING SOON</span>
 
-          <div className={styles.productImage}></div>
+       <div className={styles.productImage}>
+  <Image
+    src="/tote_bag.png"
+    alt="Premium Tote Bag"
+    fill
+    className={styles.productPhoto}
+  />
+</div>
 
           <h2>Canvas Tote</h2>
 
