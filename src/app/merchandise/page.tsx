@@ -8,7 +8,7 @@ export default function MerchandisePage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.eyebrow}>FOR TEMATIC MERCHANDISE</span>
+          <span className={styles.eyebrow}>FORTEMATIC MERCHANDISE</span>
 
           <h1 className={styles.title}>
             Designed to
