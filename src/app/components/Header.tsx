@@ -8,7 +8,6 @@ import MarketSelector from "./MarketSelector";
 
 export default function Header() {
   const { market } = useMarket();
-
   const pathname = usePathname();
 
   const isHome = pathname === "/";
@@ -18,6 +17,7 @@ export default function Header() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -25,40 +25,43 @@ export default function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  const goalsLink = isHome ? "#goals" : "/#goals";
   const productsLink = isHome ? "#products" : "/#products";
   const reviewsLink = isHome ? "#reviews" : "/#reviews";
+
   const faqLink = isMensWellness
     ? "#faq"
     : isHome
-    ? "#faq"
-    : "/#faq";
+      ? "#faq"
+      : "/#faq";
 
   return (
-  <header className={styles.header}>
-  <a className={styles.logo} href="/">
-    ForteMatic
-    <span className={styles.registeredMark}>®</span>
-  </a>
+    <header className={styles.header}>
+      <a className={styles.logo} href="/">
+        ForteMatic
+        <span className={styles.registeredMark}>®</span>
+      </a>
 
-  <MarketSelector />
+      <MarketSelector />
 
-  <nav className={styles.nav}>
-      
-
-<a
-  href="/glp-1"
-  className={`${styles.glpNav} ${
-    pathname === "/glp-1" ? styles.activeNav : ""
-  }`}
->
-  GLP-1
-  <span className={styles.bestSellerBadge}>
-    BEST SELLER
-  </span>
-</a>
+      <nav className={styles.nav}>
+        <a
+          href="/glp-1"
+          className={`${styles.glpNav} ${
+            pathname === "/glp-1" ? styles.activeNav : ""
+          }`}
+        >
+          GLP-1
+          <span className={styles.bestSellerBadge}>BEST SELLER</span>
+        </a>
 
         <a href={productsLink}>Products</a>
+
+        <a
+          href="/merchandise"
+          className={pathname === "/merchandise" ? styles.activeNav : ""}
+        >
+          Merchandise
+        </a>
 
         <a
           href="/mens-wellness"
@@ -78,20 +81,21 @@ export default function Header() {
 
         <a href={faqLink}>FAQ</a>
 
-     <a
-  className={styles.navButton}
-  href={market.amazonUrl}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Shop Now
-</a>
+        <a
+          className={styles.navButton}
+          href={market.amazonUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Shop Now
+        </a>
       </nav>
 
       <button
         className={styles.menuButton}
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen((current) => !current)}
         aria-label="Toggle navigation"
+        aria-expanded={menuOpen}
       >
         {menuOpen ? "✕" : "☰"}
       </button>
@@ -101,17 +105,16 @@ export default function Header() {
           menuOpen ? styles.mobileMenuOpen : ""
         }`}
       >
-       
-
-     <a
-  href="/glp-1"
-  onClick={closeMenu}
->
-  GLP-1
-</a>
+        <a href="/glp-1" onClick={closeMenu}>
+          GLP-1
+        </a>
 
         <a href={productsLink} onClick={closeMenu}>
           Products
+        </a>
+
+        <a href="/merchandise" onClick={closeMenu}>
+          Merchandise
         </a>
 
         <a href="/mens-wellness" onClick={closeMenu}>
