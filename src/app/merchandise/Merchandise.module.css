@@ -230,18 +230,24 @@
 }
 
 .productImage {
-  height: 330px;
-  margin: -32px -32px 30px;
-  background:
-    radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.94), transparent 42%),
-    linear-gradient(145deg, #eee9df, #f8f6f0);
-  border-bottom: 1px solid rgba(13, 64, 43, 0.08);
+    position: relative;
+    height: 260px;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .productPhoto {
     object-fit: contain;
-    padding: 35px;
+    object-position: center;
+    padding: 20px;
     transition: transform .35s ease;
+
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .card h2 {
