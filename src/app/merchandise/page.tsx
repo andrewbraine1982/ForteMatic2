@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Merchandise.module.css";
+import Header from "../components/Header";
 
 export default function MerchandisePage() {
   return (
