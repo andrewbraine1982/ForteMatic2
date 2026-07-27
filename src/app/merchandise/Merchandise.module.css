@@ -119,6 +119,10 @@
 }
 
 .heroImage {
+  .heroProductImage {
+    object-fit: contain;
+    padding: 40px;
+}
   position: relative;
   min-height: 560px;
   border-radius: 36px;
@@ -131,30 +135,9 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.65);
 }
 
-.heroImage::before {
-  content: "Merchandise imagery";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: rgba(12, 86, 56, 0.42);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
 
-.heroImage::after {
-  content: "";
-  position: absolute;
-  right: -60px;
-  bottom: -80px;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: rgba(12, 86, 56, 0.11);
-  filter: blur(2px);
-}
+
+
 
 /* ==========================================
    PROMISE BAR
