@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Reviews from "./components/Reviews";
+import GiftPopup from "./components/GiftPopup/GiftPopup";
 
 import { useEffect, useRef, useState } from "react";
 import ClosingExperience from "./components/ClosingExperience";
