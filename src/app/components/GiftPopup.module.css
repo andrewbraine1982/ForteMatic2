@@ -1,0 +1,343 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+
+  background: rgba(12, 12, 12, 0);
+
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    background 0.45s ease,
+    backdrop-filter 0.55s ease,
+    -webkit-backdrop-filter 0.55s ease,
+    opacity 0.45s ease;
+}
+
+.overlayVisible {
+  background: rgba(15, 15, 15, 0.42);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup {
+  position: relative;
+
+  width: min(980px, 96vw);
+
+  background: rgba(255, 255, 252, 0.98);
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.22),
+    0 8px 30px rgba(0, 0, 0, 0.08);
+
+  transform: translateY(28px) scale(.97);
+
+  opacity: 0;
+
+  transition:
+    transform .55s cubic-bezier(.22,.61,.36,1),
+    opacity .55s ease;
+}
+
+.popupVisible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.content {
+  padding: 72px 64px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  margin: 0;
+
+  color: #0b9c43;
+
+  text-transform: uppercase;
+
+  letter-spacing: .22em;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.title {
+  margin: 18px 0 22px;
+
+  font-size: 52px;
+
+  line-height: 1.02;
+
+  font-weight: 900;
+
+  letter-spacing: -.05em;
+
+  color: #111;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 30px;
+}
+
+.divider span:first-child,
+.divider span:last-child {
+  flex: 1;
+  height: 1px;
+  background: #e4e4e4;
+}
+
+.star {
+  color: #d4af37;
+  font-size: 15px;
+}
+
+.description {
+  color: #575757;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+.description p {
+  margin: 0 0 18px;
+}
+
+.primaryButton {
+  margin-top: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 18px 34px;
+
+  border-radius: 999px;
+
+  background: #0b9c43;
+
+  color: white;
+
+  font-weight: 800;
+
+  font-size: 17px;
+
+  text-decoration: none;
+
+  transition: all .3s ease;
+}
+
+.primaryButton:hover {
+  background: #0f7c39;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 18px 40px rgba(11,156,67,.28);
+}
+
+.continueButton {
+  margin-top: 18px;
+
+  background: transparent;
+  border: none;
+
+  color: #666;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: color .25s ease;
+}
+
+.continueButton:hover {
+  color: #111;
+}
+
+.visual {
+  position: relative;
+
+  min-height: 620px;
+
+  background:
+    radial-gradient(circle at top,
+    rgba(212,175,55,.18),
+    transparent 58%),
+    #faf9f6;
+}
+
+.imageGlow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(212,175,55,.16);
+
+  filter: blur(80px);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%,-50%);
+}
+
+.merchandiseImage {
+  object-fit: contain;
+
+  padding: 48px;
+
+  z-index: 2;
+}
+
+.closeButton {
+  position: absolute;
+
+  top: 24px;
+  right: 24px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.05);
+
+  cursor: pointer;
+
+  transition: all .25s ease;
+
+  z-index: 20;
+}
+
+.closeButton:hover {
+  background: rgba(0,0,0,.10);
+
+  transform: rotate(90deg);
+}
+
+.closeButton span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 18px;
+  height: 2px;
+
+  background: #222;
+
+  border-radius: 2px;
+}
+
+.closeButton span:first-child {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.closeButton span:last-child {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.privacy {
+  position: absolute;
+
+  bottom: 22px;
+  left: 64px;
+
+  font-size: 13px;
+
+  color: #999;
+}
+
+@media (max-width: 900px) {
+
+  .popup {
+    grid-template-columns: 1fr;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+  }
+
+  .visual {
+    order: -1;
+
+    min-height: 340px;
+  }
+
+  .content {
+    padding: 48px 34px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .privacy {
+    position: static;
+
+    padding: 0 34px 30px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .overlay {
+    padding: 18px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .content {
+    padding: 36px 26px;
+  }
+
+  .primaryButton {
+    width: 100%;
+  }
+
+}
