@@ -102,6 +102,7 @@ const [activeFaq, setActiveFaq] = useState(0);
 </div>
 
 <Header />
+      <GiftPopup />
       <Hero amazonStoreUrl={amazonStoreUrl} />
 
 <section className="seenIn">
