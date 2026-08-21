@@ -1,203 +1,368 @@
-"use client";
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import styles from "./GiftPopup.module.css";
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-const STORAGE_KEY = "fortematicGiftPopupDismissedAt";
-const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+  padding: 32px;
 
-export default function GiftPopup() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  background: rgba(12, 12, 12, 0);
 
-  const closePopup = () => {
-    setIsVisible(false);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
 
-    localStorage.setItem(
-      STORAGE_KEY,
-      Date.now().toString()
-    );
+  opacity: 0;
+  pointer-events: none;
 
-    window.setTimeout(() => {
-      setIsOpen(false);
-    }, 500);
-  };
+  transition:
+    background 0.45s ease,
+    backdrop-filter 0.55s ease,
+    -webkit-backdrop-filter 0.55s ease,
+    opacity 0.45s ease;
+}
 
-  useEffect(() => {
-    const dismissedAt = localStorage.getItem(STORAGE_KEY);
+.overlayVisible {
+  background: rgba(15, 15, 15, 0.42);
 
-    if (dismissedAt) {
-      const timeSinceDismissed =
-        Date.now() - Number(dismissedAt);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
-      if (timeSinceDismissed < SEVEN_DAYS) {
-        return;
-      }
-    }
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    const timer = window.setTimeout(() => {
-      setIsOpen(true);
+.popup {
+  position: relative;
 
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsVisible(true);
-        });
-      });
-    }, 1200);
+  width: min(980px, 96vw);
 
-    return () => {
-      window.clearTimeout(timer);
-    };
-  }, []);
+  background: rgba(255, 255, 252, 0.98);
 
-  useEffect(() => {
-    if (!isOpen) return;
+  border-radius: 30px;
 
-    const previousOverflow =
-      document.body.style.overflow;
+  overflow: hidden;
 
-    document.body.style.overflow = "hidden";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closePopup();
-      }
-    };
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.22),
+    0 8px 30px rgba(0, 0, 0, 0.08);
 
-    window.addEventListener("keydown", handleEscape);
+  transform: translateY(28px) scale(0.97);
 
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener(
-        "keydown",
-        handleEscape
-      );
-    };
-  }, [isOpen]);
+  opacity: 0;
 
-  const handleOverlayClick = (
-    event: React.MouseEvent<HTMLDivElement>
-  ) => {
-    if (event.target === event.currentTarget) {
-      closePopup();
-    }
-  };
+  transition:
+    transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.55s ease;
+}
 
-  if (!isOpen) {
-    return null;
+.popupVisible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.content {
+  padding: 72px 64px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  margin: 0;
+
+  color: #0b9c43;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.22em;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.title {
+  margin: 18px 0 22px;
+
+  font-size: 52px;
+
+  line-height: 1.02;
+
+  font-weight: 900;
+
+  letter-spacing: -0.05em;
+
+  color: #111;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 30px;
+}
+
+.divider span:first-child,
+.divider span:last-child {
+  flex: 1;
+
+  height: 1px;
+
+  background: #e4e4e4;
+}
+
+.star {
+  color: #d4af37;
+
+  font-size: 15px;
+}
+
+.description {
+  color: #575757;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+.description p {
+  margin: 0 0 18px;
+}
+
+.primaryButton {
+  margin-top: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 18px 34px;
+
+  border-radius: 999px;
+
+  background: #0b9c43;
+
+  color: white;
+
+  font-weight: 800;
+
+  font-size: 17px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.primaryButton:hover {
+  background: #0f7c39;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 18px 40px rgba(11, 156, 67, 0.28);
+}
+
+.continueButton {
+  margin-top: 18px;
+
+  background: transparent;
+
+  border: none;
+
+  color: #666;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.continueButton:hover {
+  color: #111;
+}
+
+.visual {
+  position: relative;
+
+  min-height: 620px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(212, 175, 55, 0.18),
+      transparent 58%
+    ),
+    #faf9f6;
+}
+
+.imageGlow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.16);
+
+  filter: blur(80px);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.merchandiseImage {
+  object-fit: contain;
+
+  padding: 48px;
+
+  z-index: 2;
+}
+
+.closeButton {
+  position: absolute;
+
+  top: 24px;
+  right: 24px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.05);
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+
+  z-index: 20;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.1);
+
+  transform: rotate(90deg);
+}
+
+.closeButton span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 18px;
+  height: 2px;
+
+  background: #222;
+
+  border-radius: 2px;
+}
+
+.closeButton span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.closeButton span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.privacy {
+  position: absolute;
+
+  bottom: 22px;
+  left: 64px;
+
+  font-size: 13px;
+
+  color: #999;
+}
+
+@media (max-width: 900px) {
+  .popup {
+    grid-template-columns: 1fr;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
   }
 
-  return (
-    <div
-      className={`${styles.overlay} ${
-        isVisible ? styles.overlayVisible : ""
-      }`}
-      onClick={handleOverlayClick}
-      role="presentation"
-    >
-      <div
-        className={`${styles.popup} ${
-          isVisible ? styles.popupVisible : ""
-        }`}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="gift-popup-title"
-      >
-        <button
-          type="button"
-          className={styles.closeButton}
-          onClick={closePopup}
-          aria-label="Close"
-        >
-          ×
-        </button>
+  .visual {
+    order: -1;
 
-        <div className={styles.imageSide}>
-          <img
-            src="/merch-popup.jpg"
-            alt="ForteMatic premium merchandise"
-            className={styles.image}
-          />
-        </div>
+    min-height: 340px;
+  }
 
-        <div className={styles.content}>
-          <p className={styles.eyebrow}>
-            A little something from us
-          </p>
+  .content {
+    padding: 48px 34px;
+  }
 
-          <h2
-            id="gift-popup-title"
-            className={styles.title}
-          >
-            Get your{" "}
-            <span className={styles.highlight}>
-              ForteMatic gift.
-            </span>
-          </h2>
+  .title {
+    font-size: 38px;
+  }
 
-          <p className={styles.description}>
-            Purchase your ForteMatic product on Amazon,
-            share your genuine experience, and discover
-            how to claim a complimentary premium
-            ForteMatic accessory.
-          </p>
+  .description {
+    font-size: 16px;
+  }
 
-          <div className={styles.steps}>
-            <div className={styles.step}>
-              <span className={styles.stepNumber}>
-                1
-              </span>
+  .privacy {
+    position: static;
 
-              <span>
-                Purchase ForteMatic on Amazon
-              </span>
-            </div>
+    padding: 0 34px 30px;
+  }
+}
 
-            <div className={styles.step}>
-              <span className={styles.stepNumber}>
-                2
-              </span>
+@media (max-width: 600px) {
+  .overlay {
+    padding: 18px;
+  }
 
-              <span>
-                Share your genuine product experience
-              </span>
-            </div>
+  .title {
+    font-size: 32px;
+  }
 
-            <div className={styles.step}>
-              <span className={styles.stepNumber}>
-                3
-              </span>
+  .content {
+    padding: 36px 26px;
+  }
 
-              <span>
-                Visit our merchandise page to discover
-                how to claim your gift
-              </span>
-            </div>
-          </div>
+  .primaryButton {
+    width: 100%;
+  }
 
-          <Link
-            href="/merchandise"
-            className={styles.button}
-            onClick={closePopup}
-          >
-            Discover Your Gift →
-          </Link>
+  .visual {
+    min-height: 280px;
+  }
 
-          <button
-            type="button"
-            className={styles.secondaryButton}
-            onClick={closePopup}
-          >
-            Maybe later
-          </button>
+  .merchandiseImage {
+    padding: 30px;
+  }
+}
 
-          <p className={styles.smallPrint}>
-            Terms and eligibility apply. While
-            promotional stock lasts.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .popup,
+  .primaryButton,
+  .continueButton,
+  .closeButton {
+    transition: none;
+  }
 }
