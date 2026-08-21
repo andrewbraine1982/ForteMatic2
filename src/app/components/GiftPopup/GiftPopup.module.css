@@ -1,0 +1,179 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import styles from "./GiftPopup.module.css";
+
+const STORAGE_KEY = "fortematicGiftPopupDismissedAt";
+const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+
+export default function GiftPopup() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const dismissedAt = localStorage.getItem(STORAGE_KEY);
+
+    if (dismissedAt) {
+      const timeSinceDismissed = Date.now() - Number(dismissedAt);
+
+      if (timeSinceDismissed < SEVEN_DAYS) {
+        return;
+      }
+    }
+
+    const timer = window.setTimeout(() => {
+      setIsOpen(true);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsVisible(true);
+        });
+      });
+    }, 1200);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closePopup();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen]);
+
+  const closePopup = () => {
+    setIsVisible(false);
+
+    localStorage.setItem(STORAGE_KEY, Date.now().toString());
+
+    window.setTimeout(() => {
+      setIsOpen(false);
+    }, 500);
+  };
+
+  const handleOverlayClick = (
+    event: React.MouseEvent<HTMLDivElement>
+  ) => {
+    if (event.target === event.currentTarget) {
+      closePopup();
+    }
+  };
+
+  if (!isOpen) {
+    return null;
+  }
+
+  return (
+    <div
+      className={`${styles.overlay} ${
+        isVisible ? styles.overlayVisible : ""
+      }`}
+      onClick={handleOverlayClick}
+      role="presentation"
+    >
+      <div
+        className={`${styles.popup} ${
+          isVisible ? styles.popupVisible : ""
+        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="gift-popup-title"
+      >
+        <button
+          type="button"
+          className={styles.closeButton}
+          onClick={closePopup}
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div className={styles.imageSide}>
+          <img
+            src="/merch-popup.jpg"
+            alt="ForteMatic premium merchandise"
+            className={styles.image}
+          />
+        </div>
+
+        <div className={styles.content}>
+          <p className={styles.eyebrow}>
+            A little something from us
+          </p>
+
+          <h2
+            id="gift-popup-title"
+            className={styles.title}
+          >
+            Get your{" "}
+            <span className={styles.highlight}>
+              ForteMatic gift.
+            </span>
+          </h2>
+
+          <p className={styles.description}>
+            Purchase your ForteMatic product on Amazon,
+            share your genuine experience, and discover
+            how to claim a complimentary premium
+            ForteMatic accessory.
+          </p>
+
+          <div className={styles.steps}>
+            <div className={styles.step}>
+              <span className={styles.stepNumber}>1</span>
+              <span>Purchase ForteMatic on Amazon</span>
+            </div>
+
+            <div className={styles.step}>
+              <span className={styles.stepNumber}>2</span>
+              <span>Share your genuine product experience</span>
+            </div>
+
+            <div className={styles.step}>
+              <span className={styles.stepNumber}>3</span>
+              <span>
+                Visit our merchandise page to discover
+                how to claim your gift
+              </span>
+            </div>
+          </div>
+
+          <Link
+            href="/merchandise"
+            className={styles.button}
+            onClick={closePopup}
+          >
+            Discover Your Gift →
+          </Link>
+
+          <button
+            type="button"
+            className={styles.secondaryButton}
+            onClick={closePopup}
+          >
+            Maybe later
+          </button>
+
+          <p className={styles.smallPrint}>
+            Terms and eligibility apply. While promotional
+            stock lasts.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
