@@ -86,8 +86,6 @@ export default function Home() {
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
 
-  const visibleReviewCount = showAllReviews ? 10 : 4;
-
   return (
     <main>
       <div className="topBar">
@@ -249,18 +247,20 @@ export default function Home() {
             showAllReviews ? "expanded" : ""
           }`}
         >
-          {Array.from(
-            { length: visibleReviewCount },
-            (_, i) => (
-              <img
-                key={i}
-                src={`/review-${i + 1}.jpg`}
-                alt={`ForteMatic community image ${i + 1}`}
-                loading="lazy"
-                decoding="async"
-              />
-            )
-          )}
+          {Array.from({ length: 10 }, (_, i) => (
+            <img
+              key={i}
+              src={`/review-${i + 1}.jpg`}
+              alt={`ForteMatic community image ${i + 1}`}
+              className={
+                !showAllReviews && i >= 4
+                  ? "mobileHiddenReview"
+                  : ""
+              }
+              loading="lazy"
+              decoding="async"
+            />
+          ))}
         </div>
 
         <button
@@ -355,8 +355,7 @@ export default function Home() {
             <p className="sectionLabel">Newsletter</p>
 
             <h2>
-              Get wellness tips, product launches and
-              exclusive offers.
+              Get wellness tips, product launches and exclusive offers.
             </h2>
 
             <div className="newsletterForm">
@@ -381,9 +380,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ClosingExperience
-        amazonStoreUrl={amazonStoreUrl}
-      />
+      <ClosingExperience amazonStoreUrl={amazonStoreUrl} />
     </main>
   );
 }
