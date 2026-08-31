@@ -14,13 +14,13 @@ const nextConfig = {
       // Product hero image
       {
         source: '/glp1-hero.png',
-        destination: 'https://fortematic-glp1-lander.vercel.app/glp1-hero.png',
+        destination: 'https://raw.githubusercontent.com/andrewbraine1982/fortematic-glp1-lander/main/glp1-hero.png',
       },
 
-      // Keep this too in case the browser requests the nested path
+      // Keep nested route too
       {
         source: '/best-glp-1-supplement/glp1-hero.png',
-        destination: 'https://fortematic-glp1-lander.vercel.app/glp1-hero.png',
+        destination: 'https://raw.githubusercontent.com/andrewbraine1982/fortematic-glp1-lander/main/glp1-hero.png',
       },
     ]
   },
