@@ -14,13 +14,15 @@ const nextConfig = {
       // Product hero image
       {
         source: '/glp1-hero.png',
-        destination: 'https://raw.githubusercontent.com/andrewbraine1982/fortematic-glp1-lander/main/glp1-hero.png',
+        destination:
+          'https://raw.githubusercontent.com/andrewbraine1982/fortematic-glp1-lander/main/glp1-hero.png',
       },
 
-      // Keep nested route too
+      // Vercel/Vite generated landing-page assets
       {
-        source: '/best-glp-1-supplement/glp1-hero.png',
-        destination: 'https://raw.githubusercontent.com/andrewbraine1982/fortematic-glp1-lander/main/glp1-hero.png',
+        source: '/assets/:path*',
+        destination:
+          'https://fortematic-glp1-lander.vercel.app/assets/:path*',
       },
     ]
   },
