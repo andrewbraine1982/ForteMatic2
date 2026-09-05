@@ -487,42 +487,350 @@ a {
   font-weight: 900;
 }
 
-/* RANGE SECTION */
+/* ========================================
+   RANGE SECTION — MEDITERRANEAN EDITORIAL
+======================================== */
 
 .rangeSection {
-  margin: 30px 4% 90px;
-  border-radius: 42px;
+  margin: 40px 4% 100px;
+  background: #ffffff;
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 36px;
   overflow: hidden;
-  background: linear-gradient(135deg, #96d86d, #f4d64d 45%, #f79a47);
+  box-shadow: 0 24px 70px rgba(25, 35, 25, 0.08);
 }
 
 .rangeContent {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: center;
-  min-height: 560px;
-  padding: 70px 6%;
-  gap: 30px;
+  grid-template-columns: 0.82fr 1.18fr;
+  min-height: 610px;
+  align-items: stretch;
 }
 
-.rangeContent .sectionLabel {
+
+/* ---------- COPY ---------- */
+
+.rangeCopy {
+  padding: 72px 7% 68px 9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.rangeCopy .sectionLabel {
+  margin: 0 0 22px;
+  color: #20a85a;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.rangeCopy h2 {
+  max-width: 600px;
+  margin: 0 0 26px;
   color: #111;
+  font-size: clamp(48px, 4.3vw, 74px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  font-weight: 850;
+}
+
+.rangeAccent {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  color: #149b4c;
 }
 
 .rangeText {
-  max-width: 520px;
-  margin-top: 22px;
-  font-size: 22px;
-  line-height: 1.55;
-  color: #222;
-  font-weight: 700;
+  max-width: 590px;
+  margin: 0 0 34px;
+  color: #444;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
+/* ---------- THREE PRINCIPLES ---------- */
+
+.rangePrinciples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 610px;
+  margin: 0 0 34px;
+  padding: 22px 0;
+  border-top: 1px solid #e5e2da;
+  border-bottom: 1px solid #e5e2da;
+}
+
+.rangePrinciples > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-right: 16px;
+}
+
+.rangePrinciples > div + div {
+  padding-left: 18px;
+  border-left: 1px solid #e5e2da;
+}
+
+.rangePrinciples strong {
+  color: #c59a3d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.rangePrinciples span {
+  color: #1c1c1c;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+
+
+/* ---------- CTA ---------- */
+
+.rangeButton {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  min-height: 58px;
+  padding: 0 28px;
+
+  border-radius: 12px;
+  background: #16a653;
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 850;
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.rangeButton span {
+  font-size: 20px;
+  transition: transform 0.25s ease;
+}
+
+.rangeButton:hover {
+  background: #0e9848;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(18, 150, 72, 0.2);
+}
+
+.rangeButton:hover span {
+  transform: translateX(5px);
+}
+
+
+/* ---------- PHOTOGRAPH ---------- */
+
+.rangeVisual {
+  position: relative;
+  min-width: 0;
+  min-height: 610px;
+  overflow: hidden;
 }
 
 .rangeImage {
-  width: 100%;
-  max-width: 780px;
-  justify-self: end;
   display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 610px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ---------- EDITORIAL BADGE ---------- */
+
+.rangeImageBadge {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 13px 18px;
+
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.rangeImageBadge > span {
+  color: #c49a42;
+  font-size: 19px;
+}
+
+.rangeImageBadge div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rangeImageBadge strong {
+  color: #171717;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.rangeImageBadge small {
+  color: #686868;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 1024px) {
+  .rangeContent {
+    grid-template-columns: 1fr;
+  }
+
+  .rangeCopy {
+    padding: 64px 7%;
+  }
+
+  .rangeCopy h2 {
+    max-width: 700px;
+  }
+
+  .rangeVisual {
+    min-height: 520px;
+  }
+
+  .rangeImage {
+    min-height: 520px;
+  }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .rangeSection {
+    margin: 24px 18px 70px;
+    border-radius: 24px;
+  }
+
+  .rangeContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rangeCopy {
+    padding: 46px 26px 38px;
+  }
+
+  .rangeCopy .sectionLabel {
+    margin-bottom: 17px;
+    font-size: 11px;
+  }
+
+  .rangeCopy h2 {
+    margin-bottom: 22px;
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 0.95;
+  }
+
+  .rangeText {
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .rangePrinciples {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 0;
+    margin-bottom: 28px;
+  }
+
+  .rangePrinciples > div {
+    padding: 0;
+  }
+
+  .rangePrinciples > div + div {
+    padding: 15px 0 0;
+    border-left: 0;
+    border-top: 1px solid #ece9e1;
+  }
+
+  .rangePrinciples span {
+    font-size: 11px;
+  }
+
+  .rangeButton {
+    width: 100%;
+  }
+
+  .rangeVisual {
+    min-height: 420px;
+  }
+
+  .rangeImage {
+    min-height: 420px;
+    object-position: center;
+  }
+
+  .rangeImageBadge {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    width: auto;
+  }
+}
+
+
+/* ---------- SMALL PHONE ---------- */
+
+@media (max-width: 480px) {
+  .rangeSection {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .rangeCopy {
+    padding: 40px 22px 32px;
+  }
+
+  .rangeCopy h2 {
+    font-size: 42px;
+  }
+
+  .rangeVisual,
+  .rangeImage {
+    min-height: 360px;
+  }
 }
 
 /* FEATURE SECTION */
