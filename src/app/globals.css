@@ -502,7 +502,7 @@ a {
 
 .rangeContent {
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
+  grid-template-columns: 0.72fr 1.28fr;
   min-height: 610px;
   align-items: stretch;
 }
