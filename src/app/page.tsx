@@ -252,7 +252,7 @@ export default function Home() {
       <section className="featureSection">
         <div className="featureImageWrap">
           <img
-            src="/glp-feature-premium.pn"
+            src="/glp-feature-premium.png"
             alt="ForteMatic GLP-1 supplement"
             className="featureImage"
             loading="lazy"
