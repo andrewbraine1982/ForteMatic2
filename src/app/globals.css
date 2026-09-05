@@ -656,7 +656,7 @@ a {
   height: 100%;
   min-height: 610px;
 object-fit: cover;
-  object-position: center;
+  object-position: 58% center;;
 }
 
 
