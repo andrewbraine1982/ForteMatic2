@@ -178,28 +178,76 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="rangeSection">
-        <div className="rangeContent">
-          <div>
-            <p className="sectionLabel">Product Family</p>
+ <section className="rangeSection">
+  <div className="rangeContent">
+    <div className="rangeCopy">
+      <p className="sectionLabel">THE FORTEMATIC PHILOSOPHY</p>
 
-            <h2>One brand. Multiple wellness goals.</h2>
+      <h2>
+        Mediterranean wisdom.
+        <br />
+        <span className="rangeAccent">Modern science.</span>
+      </h2>
 
-            <p className="rangeText">
-              Discover premium daily supplements supporting gut health,
-              metabolism, energy, hormone balance, longevity and GLP-1 support.
-            </p>
-          </div>
+      <p className="rangeText">
+        Inspired by the Mediterranean approach to living well and ageing
+        well. ForteMatic combines timeless wellness principles with modern
+        nutritional science and premium supplements made in the USA.
+      </p>
 
-          <img
-            src="/range-bottles.png"
-            alt="ForteMatic supplement range"
-            className="rangeImage"
-            loading="lazy"
-            decoding="async"
-          />
+      <div className="rangePrinciples">
+        <div>
+          <strong>01</strong>
+          <span>
+            Inspired by the
+            <br />
+            Mediterranean
+          </span>
         </div>
-      </section>
+
+        <div>
+          <strong>02</strong>
+          <span>
+            Refined through
+            <br />
+            modern science
+          </span>
+        </div>
+
+        <div>
+          <strong>03</strong>
+          <span>
+            Made without
+            <br />
+            compromise
+          </span>
+        </div>
+      </div>
+
+      <a href="#products" className="rangeButton">
+        Discover the range <span>→</span>
+      </a>
+    </div>
+
+    <div className="rangeVisual">
+      <img
+        src="/product-family-mediterranean.png"
+        alt="ForteMatic supplement collection with Mediterranean ingredients"
+        className="rangeImage"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <div className="rangeImageBadge">
+        <span>✦</span>
+        <div>
+          <strong>THE ART OF LIVING WELL</strong>
+          <small>Inspired by the Mediterranean</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="featureSection">
         <div className="featureImageWrap">
