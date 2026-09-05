@@ -653,7 +653,7 @@ a {
 .rangeImage {
   display: fill;
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 610px;
 object-fit: cover;
   object-position: 58% center;;
