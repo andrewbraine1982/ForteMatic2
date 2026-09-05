@@ -655,7 +655,7 @@ a {
   width: 100%;
   height: auto;
   min-height: 610px;
-object-fit: cover;
+object-fit: contain;
   object-position: 58% center;;
 }
 
